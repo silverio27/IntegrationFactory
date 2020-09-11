@@ -4,6 +4,10 @@
     <ProjectReference Include="..\IntegrationFactory.Domain\IntegrationFactory.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Figgle" Version="0.4.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>

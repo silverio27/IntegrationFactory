@@ -22,3 +22,4 @@ C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\obj
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\obj\Debug\netcoreapp3.1\IntegrationFactory.Domain.ConsoleApp.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\obj\Debug\netcoreapp3.1\IntegrationFactory.Domain.ConsoleApp.pdb
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\obj\Debug\netcoreapp3.1\IntegrationFactory.Domain.ConsoleApp.genruntimeconfig.cache
+C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\Figgle.dll

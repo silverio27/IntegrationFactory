@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CRvHxzq3EOQCfjYBFYQefuYGhXQ5QkJbQyeqLWKSa8VlOOasfWBwuzh4ejKGDa8kq8bo92kdBSP1mExmfnks1w==",
+  "dgSpecHash": "TVdHQhf0Wl0QPY2tR4J3VuLvRDOs3SoBEiHq610hfVTxKPOLQgEZWl6Z2bTM9qEXzyjlo+fD4VDXX1JtO97uIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.Tests\\IntegrationFactory.Domain.Tests.csproj",
+  "projectFilePath": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.Tests\\IntegrationFactory.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
