@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ADlJ9EqDWL/hEigvQmdTFIhmQQrquFP2MbKpPUTc/rFchoDauAy7/49FyALLZWT/8QNUZtu6oSGek91pHC5tBQ==",
+  "dgSpecHash": "Gvwqs8/jqqmzR8JA75UCejD1vZkVrQRWltPFmwnRvqBuE1KDNQkx074YvMFcVNr0HM88+vF/jPZY6mLmJZSwVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain\\IntegrationFactory.Domain.csproj",
+  "projectFilePath": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain\\IntegrationFactory.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512",

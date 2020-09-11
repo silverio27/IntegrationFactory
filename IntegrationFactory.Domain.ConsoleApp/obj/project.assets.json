@@ -4934,11 +4934,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\IntegrationFactory.Domain.ConsoleApp.csproj",
+      "projectUniqueName": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\IntegrationFactory.Domain.ConsoleApp.csproj",
       "projectName": "IntegrationFactory.Domain.ConsoleApp",
-      "projectPath": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\IntegrationFactory.Domain.ConsoleApp.csproj",
+      "projectPath": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\IntegrationFactory.Domain.ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\obj\\",
+      "outputPath": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4955,8 +4955,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain\\IntegrationFactory.Domain.csproj": {
-              "projectPath": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain\\IntegrationFactory.Domain.csproj"
+            "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain\\IntegrationFactory.Domain.csproj": {
+              "projectPath": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain\\IntegrationFactory.Domain.csproj"
             }
           }
         }

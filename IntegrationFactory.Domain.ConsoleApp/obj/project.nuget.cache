@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "piCq1Vlx3rpZm9jVN4IZzeKwK8SOwTQiiVkP8MfSeLwDvtLZhsjWIvuOo9OUY6pYH/cwCCvUc/q67hF9/lg41Q==",
+  "dgSpecHash": "9+YapMg41xrhSOaz96Yra5/VNrlHeDhnbrEjrtAz77huZ/Il4tARqxFQmJ0OZDmVL285nwaLm3Lmh5I+PgqlkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\IntegrationFactory.Domain.ConsoleApp.csproj",
+  "projectFilePath": "c:\\Users\\Lucas\\Teste\\IntegrationFactory\\IntegrationFactory.Domain.ConsoleApp\\IntegrationFactory.Domain.ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\figgle\\0.4.0\\figgle.0.4.0.nupkg.sha512",
