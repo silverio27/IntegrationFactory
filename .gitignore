@@ -387,5 +387,16 @@ obj/
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/code
+*.dll
+*.pdb
+*.suo
+*.Publish.xml
+*.tmproj
+.DS_Store
+*.cache
+bin
+Bin
+App_Data
+App_data
 *~
 *FileListAbsolute.txt
