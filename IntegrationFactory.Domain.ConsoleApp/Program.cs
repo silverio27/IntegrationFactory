@@ -1,7 +1,6 @@
 ﻿using System;
 using Figgle;
-using IntegrationFactory.Domain.Commands.SqlServerCommand;
-using IntegrationFactory.Domain.Handlers;
+
 
 namespace IntegrationFactory.Domain.ConsoleApp
 {
