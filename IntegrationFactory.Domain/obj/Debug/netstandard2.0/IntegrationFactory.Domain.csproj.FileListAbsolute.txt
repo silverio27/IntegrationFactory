@@ -1,9 +1,0 @@
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\bin\Debug\netstandard2.0\IntegrationFactory.Domain.deps.json
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\bin\Debug\netstandard2.0\IntegrationFactory.Domain.dll
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\bin\Debug\netstandard2.0\IntegrationFactory.Domain.pdb
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\obj\Debug\netstandard2.0\IntegrationFactory.Domain.csprojAssemblyReference.cache
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\obj\Debug\netstandard2.0\IntegrationFactory.Domain.csproj.CoreCompileInputs.cache
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\obj\Debug\netstandard2.0\IntegrationFactory.Domain.AssemblyInfoInputs.cache
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\obj\Debug\netstandard2.0\IntegrationFactory.Domain.AssemblyInfo.cs
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\obj\Debug\netstandard2.0\IntegrationFactory.Domain.dll
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain\obj\Debug\netstandard2.0\IntegrationFactory.Domain.pdb
