@@ -17,6 +17,8 @@ Implementando Sql Server para Sql Server
 * Adicionar múltiplos Ids para o Processo de Merge
 * Adicionar validações em origem e destino
 * Adicionar notificações em origem e destino
+* Adicionar propriedade de Resultado ao PipeLine
+* Adicionar observadores para o cliente acompanhar o trabalho
 
 
 ## Nuget
