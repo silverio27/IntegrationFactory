@@ -1,5 +1,5 @@
 # Integration Factory
-#### Biblioteca para facilitar o processos de ETL
+#### Biblioteca para facilitar os processos de ETL
 
 ## Progresso
 
