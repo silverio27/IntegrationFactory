@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace IntegrationFactory.Domain.DataSet
 {
-    public interface IDestiny<T> : IDisposable
+    public interface IDestiny : IDisposable
     {
-        IResult<T> Synk(T data);
+        Result Synk(DataTable data);
+        void MapToSynk(List<Map> maps);
     }
 }

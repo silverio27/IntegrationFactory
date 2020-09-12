@@ -6,7 +6,6 @@ C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\IntegrationFactory.Domain.ConsoleApp.pdb
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\Dapper.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\Figgle.dll
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\Flunt.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.ConsoleApp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll

@@ -7,7 +7,6 @@ C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debu
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\IntegrationFactory.Domain.Tests.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\IntegrationFactory.Domain.Tests.pdb
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\Dapper.dll
-C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\Flunt.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\Lucas\Teste\IntegrationFactory\IntegrationFactory.Domain.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
