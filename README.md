@@ -5,12 +5,13 @@
 
 Origem | Destino | Testes | Estável
 ------ | ------- | ----- | -------
-SqlSever | SqlServer | 0% | Não
-SOAP(xml) | SqlServer | 0% | Não
-CSV | SqlServer | 0% | Não
-TXT | SqlServer | 0% | Não
-XML | SqlServer | 0% | Não
+SqlSever* | SqlServer | 0% | Não
+CSV* | SqlServer | 0% | Não
+TXT* | SqlServer | 0% | Não
+XML* | SqlServer | 0% | Não
+JSON | SqlServer | 0% | Não
 REST(Json) | SqlServer | 0% | Não
+SOAP(xml) | SqlServer | 0% | Não
 
 # No momento
 Implementando Sql Server para Sql Server

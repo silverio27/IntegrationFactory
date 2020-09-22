@@ -1,0 +1,242 @@
+<Respostas xmlns="http://www.bionexo.com.br">
+   <Cabecalho>
+      <PDC>123456789</PDC>
+      <!--Numero do pedido de cotacao na plataforma Bionexo - Number(9)-->
+      <Requisicao>237112</Requisicao>
+      <!--Identificador do Pedido de Cotação no sistema local - Varchar2(10)-->
+      <Requisicao>00009416</Requisicao>
+      <!--Somente em caso de cotação consolidada-->
+      <Requisicao>00009426</Requisicao>
+      <!--Somente em caso de cotação consolidada-->
+      <Data_Vencimento>04/10/2015</Data_Vencimento>
+      <!--Data do vencimento da cotação - FORMATO DD/MM/AAAA-->
+      <Hora_Vencimento>17:00</Hora_Vencimento>
+      <!--Hora do vencimento da cotação - FORMATO HH:MM-->
+      <Campo_Extra>
+         <!--Os Campos Extras serão devolvidos exatamente conforme enviados-->
+         <Nome>Centro de Custo</Nome>
+         <!--Campo extra - Varchar2(20)-->
+         <Valor>555</Valor>
+         <!--Campo extra - Varchar2(30)-->
+      </Campo_Extra>
+      <Campo_Extra>
+         <Nome>Cod. do Usuario</Nome>
+         <Valor>4522</Valor>
+      </Campo_Extra>
+   </Cabecalho>
+   <Fornecedores>
+      <!--Fornecedores que responderam o item enviado para o carrinho-->
+      <Fornecedor>
+         <Razao_Social>Razão Social fornecedor 1</Razao_Social>
+         <!--Razão Social do fornecedor selecionado - Varchar2(100)-->
+         <CNPJ>00.000.000/0000-00</CNPJ>
+         <!--Cnpj do fornecedor a confirmar - Varchar2(18)-->
+         <Faturamento_Minimo>140.0000</Faturamento_Minimo>
+         <!--Faturamento minimo solicitado pelo fornecedor - Number(12)-->
+         <Prazo_Entrega>5</Prazo_Entrega>
+         <!---Prazo para entrega do item em dias corridos - Number(4)-->
+         <Validade_Proposta>14/10/2015</Validade_Proposta>
+         <!--Validade da proposta - DATE FORMATO(DD/MM/AAAA)-->
+         <Id_Forma_Pagamento>2</Id_Forma_Pagamento>
+         <!--Forma de pagamento ofertada pelo fornecedor (codigo Bionexo) - Number(3)-->
+         <Frete>CIF</Frete>
+         <!--Tipo de frete CIF ou FOB - Varchar2(3)-->
+      </Fornecedor>
+      <Fornecedor>
+         <Razao_Social>Razão Social fornecedor 2</Razao_Social>
+         <CNPJ>00.000.000/0000-00</CNPJ>
+         <Faturamento_Minimo>200.0000</Faturamento_Minimo>
+         <Prazo_Entrega>2</Prazo_Entrega>
+         <Validade_Proposta>09/10/2015</Validade_Proposta>
+         <Id_Forma_Pagamento>4</Id_Forma_Pagamento>
+         <Frete>CIF</Frete>
+      </Fornecedor>
+   </Fornecedores>
+   <Itens>
+      <!--Itens no carrinho-->
+      <Item>
+         <Id_Artigo>7395685</Id_Artigo>
+         <!--Identificador na Bionexo do item a confirmar enviado no download - Number-->
+         <Cod_Produto>100290</Cod_Produto>
+         <!--Codigo do produto no sistema local-->
+         <Quantidade>50</Quantidade>
+         <!--Quantidade cotada-->
+         <Campo_Extra>
+            <!--Os Campos Extras serão devolvidos exatamente conforme enviados-->
+            <Nome>Item</Nome>
+            <!--Campo extra - Varchar2(20)-->
+            <Valor>2</Valor>
+            <!--Campo extra - Varchar2(50)-->
+         </Campo_Extra>
+         <Campo_Extra>
+            <Nome>Requisicao</Nome>
+            <Valor>287658</Valor>
+         </Campo_Extra>
+         <Campo_Extra>
+            <!--Campo Extra responsável por retornar a Justificativa do Comprador-->
+            <Nome>justificativa</Nome>
+            <Valor>Fornecedor com melhor condição de pagamento.</Valor>
+         </Campo_Extra>
+         <Resposta>
+            <!--Respostas dos fornecedores-->
+            <CNPJ>00.000.000/0000-00</CNPJ>
+            <!--Cnpj do fornecedor a confirmar - Varchar2(18)-->
+            <Fabricante>Fabricante teste</Fabricante>
+            <!--Fabricante do item ofertado - Varchar2(50)-->
+            <Embalagem>Caixa</Embalagem>
+            <!--Embalagem do item a confirmar - Varchar2(50)-->
+            <Preco_Unitario>0.1500</Preco_Unitario>
+            <!--Valor unitário ofertado pelo fornecedor - Number(12)-->
+            <Preco_Total>7.5000</Preco_Total>
+            <!--Valor total ofertado pelo fornecedor - Number(12)-->
+            <Comentario>Validade de 30 dias</Comentario>
+            <Campo_Extra>
+               <!--Campo extra opcional. Caso o cliente utilize "MARCAS APROVADAS" a informação é enviada; do contrário, não-->
+               <Nome>Cod_Marca</Nome>
+               <!--Descrição do Campo Extra-->
+               <Valor>48330</Valor>
+               <!--Codigo do campo extra-->
+            </Campo_Extra>
+            <Campo_Extra>
+               <!--Campo extra opcional. Será enviado quando o cliente tem a necessidade de saber a quantidade por embalagem do produto adquirido.-->
+               <Nome>Qtd_Embalagem</Nome>
+               <!--Quantidade por embalagem-->
+               <Valor>10</Valor>
+               <!--Valor da quantidade-->
+            </Campo_Extra>
+            <Campo_Extra>
+               <!--O Campo Extra responsável por sinalizar se o item está no carrinho de compra, para este fornecedor-->
+               <Nome>Selecionado</Nome>
+               <Valor>S</Valor>
+               <!--Campo Extra que conterá dois valores exclusivos: S ou N. Quando S, informara que o item está no carrinho de compra para o fornecedor em questão-->
+            </Campo_Extra>
+         </Resposta>
+         <Resposta>
+            <CNPJ>00.000.000/0000-00</CNPJ>
+            <Fabricante>Fabricante teste</Fabricante>
+            <Embalagem>Caixa com 100</Embalagem>
+            <Preco_Unitario>0.2300</Preco_Unitario>
+            <Preco_Total>230.0000</Preco_Total>
+            <Comentario>-</Comentario>
+            <Campo_Extra>
+               <Nome>Cod_Marca</Nome>
+               <Valor>48329</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Qtd_Embalagem</Nome>
+               <Valor>100</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Selecionado</Nome>
+               <Valor>N</Valor>
+            </Campo_Extra>
+         </Resposta>
+      </Item>
+      <Item>
+         <Id_Artigo>7395684</Id_Artigo>
+         <Cod_Produto>102863</Cod_Produto>
+         <Quantidade>300</Quantidade>
+         <Campo_Extra>
+            <Nome>justificativa</Nome>
+            <Valor>Fornecedor cotou marca homologada.</Valor>
+         </Campo_Extra>
+         <Programacao_Entrega>
+            <Data>10/10/2015</Data>
+            <Quantidade>100.0</Quantidade>
+         </Programacao_Entrega>
+         <Programacao_Entrega>
+            <Data>20/10/2015</Data>
+            <Quantidade>100.0</Quantidade>
+         </Programacao_Entrega>
+         <Programacao_Entrega>
+            <Data>30/10/2015</Data>
+            <Quantidade>100.0</Quantidade>
+         </Programacao_Entrega>
+         <Campo_Extra>
+            <Nome>Item</Nome>
+            <Valor>1</Valor>
+         </Campo_Extra>
+         <Campo_Extra>
+            <Nome>Requisicao</Nome>
+            <Valor>287657</Valor>
+         </Campo_Extra>
+         <Resposta>
+            <CNPJ>00.000.000/0000-00</CNPJ>
+            <Fabricante>Fabricante teste</Fabricante>
+            <Embalagem>Caixa</Embalagem>
+            <Preco_Unitario>0.3000</Preco_Unitario>
+            <Preco_Total>90.0000</Preco_Total>
+            <Comentario>-</Comentario>
+            <Campo_Extra>
+               <Nome>Cod_Marca</Nome>
+               <Valor>48331</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Qtd_Embalagem</Nome>
+               <Valor>10</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Selecionado</Nome>
+               <Valor>S</Valor>
+            </Campo_Extra>
+         </Resposta>
+      </Item>
+      <Item>
+         <Id_Artigo>7395686</Id_Artigo>
+         <Cod_Produto>100412</Cod_Produto>
+         <Quantidade>1000</Quantidade>
+         <Programacao_Entrega>
+            <Data>10/10/2015</Data>
+            <Quantidade>1000.0</Quantidade>
+         </Programacao_Entrega>
+         <Campo_Extra>
+            <Nome>Item</Nome>
+            <Valor>3</Valor>
+         </Campo_Extra>
+         <Campo_Extra>
+            <Nome>Requisicao</Nome>
+            <Valor>287659</Valor>
+         </Campo_Extra>
+         <Resposta>
+            <CNPJ>00.000.000/0000-00</CNPJ>
+            <Fabricante>Fabricante teste</Fabricante>
+            <Embalagem>Caixa</Embalagem>
+            <Preco_Unitario>0.1200</Preco_Unitario>
+            <Preco_Total>120.0000</Preco_Total>
+            <Comentario>-</Comentario>
+            <Campo_Extra>
+               <Nome>Cod_Marca</Nome>
+               <Valor>48332</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Qtd_Embalagem</Nome>
+               <Valor>100</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Selecionado</Nome>
+               <Valor>N</Valor>
+            </Campo_Extra>
+         </Resposta>
+         <Resposta>
+            <CNPJ>00.000.000/0000-00</CNPJ>
+            <Fabricante>Fabricante teste</Fabricante>
+            <Embalagem>Caixa com 100</Embalagem>
+            <Preco_Unitario>0.1700</Preco_Unitario>
+            <Preco_Total>510.0000</Preco_Total>
+            <Comentario>-</Comentario>
+            <Campo_Extra>
+               <Nome>Cod_Marca</Nome>
+               <Valor>48657</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Qtd_Embalagem</Nome>
+               <Valor>100</Valor>
+            </Campo_Extra>
+            <Campo_Extra>
+               <Nome>Selecionado</Nome>
+               <Valor>S</Valor>
+            </Campo_Extra>
+         </Resposta>
+      </Item>
+   </Itens>
+</Respostas>
