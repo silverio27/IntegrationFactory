@@ -25,27 +25,35 @@ namespace IntegrationFactory.Domain.ConsoleApp
         private static void Teste()
         {
             var origin = new SqlServerOrigin<Region>(
-                "Server=.\\SQLEXPRESS2017;Database=IBGE;Uid=sa;Pwd=N13tzsche;", "select * from region");
+                "Server=.\\SQLEXPRESS;Database=TESTE;Trusted_Connection=True;", "select * from region");
 
             var destiny = new SqlServerDestiny(
-                "Server=.\\SQLEXPRESS2017;Database=TRAMAL;Uid=sa;Pwd=N13tzsche;",
+                "Server=.\\SQLEXPRESS;Database=TESTE;Trusted_Connection=True;",
                 "Regiao");
 
-            var map = new List<Map>{
-                new Map("Id", "Identidade"),
-                new Map("Initials", "Sigla"),
-                new Map("Name", "NomeDaRegiao"),
-            };
-
-            var pipeLine = new PipeLineContext<Region>(
-                origin, destiny, map)
+            var pipeLine = new PipeLineContext<Region>()
+                    .SetOrigin(origin)
+                    .OtherAction(() => Log("Origem definida"))
+                    .SetDestiny(destiny)
+                    .OtherAction(() => Log("Destino definido"))
+                    .AddMap("Id", "Identidade")
+                    .AddMap("Initials", "Sigla")
+                    .AddMap("Name", "NomeDaRegiao")
+                    .OtherAction(() => Log("Mapeamento definido"))
                     .Get()
-                    .Synk();
+                    .OtherAction(() => Log("Dados obtidos"))
+                    .Synk()
+                    .OtherAction(() => Log("Integração concluída."));
 
             foreach (var notification in pipeLine.Notifications)
             {
                 Console.WriteLine(notification);
             }
+        }
+
+        static void Log(string log)
+        {
+            Console.WriteLine(log);
         }
     }
 }

@@ -12,8 +12,13 @@ namespace IntegrationFactory.Domain.PipeLine
         IEnumerable<O> OriginData { get; }
         List<string> Notifications { get; }
 
-        IPipeLine<O> Get(List<Action> before = null, List<Action> after = null);
-        IPipeLine<O> Synk(List<Action> before = null, List<Action> after = null);
+        IPipeLine<O> SetOrigin(IOrigin<O> origin);
+        IPipeLine<O> SetDestiny(IDestiny destiny);
+        IPipeLine<O> AddMap(string source, string target);
+        IPipeLine<O> Get();
+        IPipeLine<O> Synk();
+
+        IPipeLine<O> OtherAction(Action action);
 
 
     }
