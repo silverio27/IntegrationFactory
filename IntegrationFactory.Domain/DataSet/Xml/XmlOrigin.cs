@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
 namespace IntegrationFactory.Domain.DataSet.PlainText
 {
-    public class XmlOrigin<T> : IOrigin<T>
+    public class XmlOrigin<T> : Validatable, IOrigin<T>
     {
         string _path;
         Func<XElement, T> _mapping;
-
         string _descendants;
         public XmlOrigin(string path, Func<XElement, T> mapping)
         {
@@ -28,9 +26,9 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
              .Select(_mapping);
         }
 
-        public void Dispose()
+        public override void Validate()
         {
-
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,11 +5,12 @@ using System.Linq;
 
 namespace IntegrationFactory.Domain.DataSet.PlainText
 {
-    public class PlainTextOrigin<T> : IOrigin<T>
+    public class PlainTextOrigin<T> : Validatable, IOrigin<T>
     {
         string _path;
         Func<string[], T> _mapping;
         char _separator;
+
 
         public PlainTextOrigin(string path, Func<string[], T> mapping)
         {
@@ -22,14 +23,24 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
             _separator = separator;
             return this;
         }
+
+
         public IEnumerable<T> Get()
         {
             return File.ReadAllLines(_path).Select(a => a.Split(_separator)).Select(_mapping
                 ).ToList();
         }
 
-        public void Dispose()
+        public override void Validate()
         {
+            if (string.IsNullOrEmpty(_path))
+                AddNotification("O caminho não pode ser vazio ou nulo.");
+
+            if (!File.Exists(_path))
+                AddNotification("O arquivo não existe no local indicado.");
+
+            if (_separator == '\0')
+                AddNotification("O separador não é válido.");
 
         }
     }

@@ -4,12 +4,12 @@ using Dapper;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {
-    public class SqlServerOrigin<T> : IOrigin<T>
+    public class SqlServerOrigin<T> : Validatable, IOrigin<T>
     {
 
         SqlConnection _connection;
         public string SqlCommand { get; private set; }
-     
+
         public SqlServerOrigin(string connectionString, string sqlCommand)
         {
             _connection = new SqlConnection(connectionString);
@@ -22,7 +22,12 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
 
         public void Dispose()
         {
-           _connection.Dispose();
+            _connection.Dispose();
+        }
+
+        public override void Validate()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

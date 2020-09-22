@@ -6,7 +6,7 @@ using Dapper;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {
-    public class SqlServerDestiny : IDestiny
+    public class SqlServerDestiny :Validatable, IDestiny
     {
         SqlConnection _connection;
         SqlBulkCopy _sqlBulkCopy;
@@ -101,6 +101,11 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
         {
             _sqlBulkCopy.Close();
             _connection.Dispose();
+        }
+
+        public override void Validate()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

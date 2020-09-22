@@ -18,22 +18,13 @@ namespace IntegrationFactory.Domain.ConsoleApp
 
 
             XmlToSqlServer.Execute();
-            TxtToSqlServer.Execute();
-            CsvToSqlServer.Execute();
-            SqlServerToSqlServer.Execute();
+            // TxtToSqlServer.Execute();
+            // CsvToSqlServer.Execute();
+            // SqlServerToSqlServer.Execute();
 
 
             Console.ReadKey();
         }
-
-
-
-
-
-  
-  
-
-    
 
     }
 }
