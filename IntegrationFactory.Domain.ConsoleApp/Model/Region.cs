@@ -1,4 +1,4 @@
-namespace IntegrationFactory.Domain.ConsoleApp
+namespace IntegrationFactory.Domain.ConsoleApp.Model
 {
     public class Region
     {
