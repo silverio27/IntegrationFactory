@@ -8,7 +8,7 @@ using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {
-    public class SqlServerDestiny : Validatable, IDestiny
+    public partial class SqlServerDestiny : Validatable, IDestiny
     {
         SqlConnection _connection;
         SqlBulkCopy _sqlBulkCopy;
@@ -22,11 +22,9 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
         }
 
         public void MapToSynk(List<Map> maps) =>
-            maps.ForEach((map) =>
-            {
-                _sqlBulkCopy.ColumnMappings.Add(new SqlBulkCopyColumnMapping(map.Source, map.Target));
-            });
-
+            maps.ForEach((m) =>
+                _sqlBulkCopy.ColumnMappings.Add(
+                    new SqlBulkCopyColumnMapping(m.Source, m.Target)));
         public Result Synk(DataTable data)
         {
             CreateTemporaryTable();
@@ -35,79 +33,20 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
             return new Result(true, $"{data.Rows.Count} itens incluídos");
         }
 
-        private void CreateTemporaryTable()
+        public override void Validate()
         {
-            string sql = $@"select top 0 *
-                            into #{Table}
-                            from {Table} ";
-            _connection.Execute(sql);
-        }
+            if (string.IsNullOrEmpty(_connection.ConnectionString))
+                AddNotification("A string de conexão não pode ser vazio ou nula.");
 
-        private void Bulk(DataTable data)
-        {
-            _sqlBulkCopy.BulkCopyTimeout = 0;
-            _sqlBulkCopy.BatchSize = data.Rows.Count;
-            _sqlBulkCopy.DestinationTableName = $"#{Table}";
-            _sqlBulkCopy.WriteToServer(data);
-        }
+            if (string.IsNullOrEmpty(Table))
+                AddNotification("A tabela de destino não pode ser vazio ou nulo.");
 
-        private void Merge()
-        {
-            string key = GetKey();
-            string sql = GetMergeCommand(key);
-            _connection.Execute(sql);
-        }
-
-        private string GetKey()
-        {
-            string sql = $"select COLUMN_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME like '{Table}'";
-            return _connection.QueryFirst<string>(sql);
-        }
-
-        private string GetMergeCommand(string key)
-        {
-            string sql = $" Merge {Table} as Destiny \n";
-            sql += $" USING #{Table} as Origin \n";
-            sql += $" ON Destiny.{key} = Origin.{key} \n";
-
-
-            var columns = GetColumns().ToList();
-
-            sql += $" WHEN MATCHED THEN \n";
-            sql += $" UPDATE SET \n";
-            for (int i = 0; i < columns.Count; i++)
-            {
-                string column = columns[i];
-                sql += $" {column} = Origin.{column}";
-                sql += (i < columns.Count - 1) ? "," : "";
-                sql += "\n";
-            }
-
-            sql += $" WHEN NOT MATCHED THEN \n";
-            sql += $" INSERT ( { string.Join(", ", columns)} ) \n";
-            sql += $" VALUES ( { string.Join(", ", columns.Select(x => $"Origin.{x}")) } ) \n";
-            sql += ";";
-
-            return sql;
-        }
-
-        private IEnumerable<string> GetColumns()
-        {
-            string sql = $@"select COLUMN_NAME 
-                            from INFORMATION_SCHEMA.COLUMNS 
-                            where TABLE_NAME like '{Table}';";
-            return _connection.Query<string>(sql);
         }
 
         public void Dispose()
         {
             _sqlBulkCopy.Close();
             _connection.Dispose();
-        }
-
-        public override void Validate()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -19,6 +19,9 @@ Implementando dados que integram com SqlServer
 * Adicionar propriedade de Resultado ao PipeLine
 * Adicionar observadores para o cliente acompanhar o trabalho
 * Documentar implementação com exemplos
+* Realizar testes com a implementação de csv to sql server
+* Melhorar design da montagem do PipeLine
+* Eliminar o Dapper das consultas
 
 
 ## Nuget
