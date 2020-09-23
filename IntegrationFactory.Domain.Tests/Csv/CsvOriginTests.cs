@@ -3,12 +3,12 @@ using System;
 using IntegrationFactory.Domain.DataSet.PlainText;
 using IntegrationFactory.Domain.Tests.SeedWork;
 using Xunit;
-using System.IO;
 
 namespace IntegrationFactory.Domain.Tests.Csv
 {
     public class CsvOriginTests
     {
+        string _pathCsv = @"..\..\..\Files\Regiao.Csv";
         private static Func<string[], Region> Mapping => (c => new Region()
         {
             Id = Convert.ToInt32(c[0]),
@@ -16,9 +16,17 @@ namespace IntegrationFactory.Domain.Tests.Csv
             Name = c[2]
         });
 
-        // string _pathCsv = @"C:\Work\IntegrationFactory\IntegrationFactory.Domain.Tests\Csv\Regiao.csv";
+        private static Func<string[], Region> MappingInválido => (c => new Region()
+        {
+            Id = Convert.ToInt32(c[0]),
+            Initials = c[1],
+            Name = c[3]
+        });
 
-        string _pathCsv = @"..\..\..\Files\Regiao.Csv";
+        private static Func<string[], Region> MappingInv => (c => new Region()
+        );
+
+
         [Fact]
         public void DadaUmaOrigemVálida()
         {
@@ -52,9 +60,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoInválido()
         {
-
-            var origin = new PlainTextOrigin<Region>("RRRRRR"
-                , Mapping);
+            var origin = new PlainTextOrigin<Region>("RRRRRR", Mapping);
             origin.Validate();
 
             Assert.Equal("O arquivo não existe no local indicado.",
@@ -65,25 +71,67 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComSeparadorNulo()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv
-                , Mapping);
+            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
             origin.Validate();
 
             Assert.Equal("O separador não é válido.",
                 origin.Notifications.First());
         }
         [Fact]
-        public void DadaUmaOrigemComSeparadorInválido()
+        public void DadaUmaOrigemSemConfigurarUmSeparador()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv
-                , Mapping);
-            origin.SetSeparator('');
+            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
             origin.Validate();
 
             Assert.Equal("O separador não é válido.",
                 origin.Notifications.First());
         }
 
+        [Fact]
+        public void DadaUmaOrigemComUmMappingNulo()
+        {
+            var origin = new PlainTextOrigin<Region>(_pathCsv, null);
+            origin.SetSeparator(';');
+            origin.Validate();
+
+            Assert.Equal("O mapeamento não pode ser nulo.",
+                origin.Notifications.First());
+        }
+
+        [Fact]
+        public void DadaUmaOrigemVálidaRetornaUmaLista()
+        {
+
+            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            origin.SetSeparator(';');
+            origin.Validate();
+
+            var result = origin.Get();
+
+            Assert.NotEmpty(result);
+        }
+
+        [Fact]
+        public void DadaUmaOrigemComSeparatorInválidoRetornaUmaExcessaoDeFormato()
+        {
+
+            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            origin.SetSeparator('|');
+            origin.Validate();
+
+            Assert.Throws<System.FormatException>(() => origin.Get());
+        }
+
+        [Fact]
+        public void DadaUmaOrigemComMappginInválidoRetornaUmaExcessaoDeFormato()
+        {
+
+            var origin = new PlainTextOrigin<Region>(_pathCsv, MappingInválido);
+            origin.SetSeparator(';');
+            origin.Validate();
+
+            Assert.Throws<System.IndexOutOfRangeException>(() => origin.Get());
+        }
     }
 }
