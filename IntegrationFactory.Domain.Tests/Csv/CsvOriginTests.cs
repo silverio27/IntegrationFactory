@@ -8,29 +8,12 @@ namespace IntegrationFactory.Domain.Tests.Csv
 {
     public class CsvOriginTests
     {
-        string _pathCsv = @"..\..\..\Files\Regiao.Csv";
-        private static Func<string[], Region> Mapping => (c => new Region()
-        {
-            Id = Convert.ToInt32(c[0]),
-            Initials = c[1],
-            Name = c[2]
-        });
-
-        private static Func<string[], Region> MappingInválido => (c => new Region()
-        {
-            Id = Convert.ToInt32(c[0]),
-            Initials = c[1],
-            Name = c[3]
-        });
-
-        private static Func<string[], Region> MappingInv => (c => new Region()
-        );
 
 
         [Fact]
         public void DadaUmaOrigemVálida()
         {
-            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
             origin.SetSeparator(';');
             origin.Validate();
 
@@ -40,7 +23,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoVazio()
         {
-            var origin = new PlainTextOrigin<Region>("", Mapping);
+            var origin = new PlainTextOrigin<Region>("", CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O caminho não pode ser vazio ou nulo.",
@@ -50,7 +33,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoNulo()
         {
-            var origin = new PlainTextOrigin<Region>(null, Mapping);
+            var origin = new PlainTextOrigin<Region>(null, CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O caminho não pode ser vazio ou nulo.",
@@ -60,7 +43,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoInválido()
         {
-            var origin = new PlainTextOrigin<Region>("RRRRRR", Mapping);
+            var origin = new PlainTextOrigin<Region>("RRRRRR", CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O arquivo não existe no local indicado.",
@@ -71,7 +54,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComSeparadorNulo()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O separador não é válido.",
@@ -81,7 +64,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemSemConfigurarUmSeparador()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O separador não é válido.",
@@ -91,7 +74,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComUmMappingNulo()
         {
-            var origin = new PlainTextOrigin<Region>(_pathCsv, null);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, null);
             origin.SetSeparator(';');
             origin.Validate();
 
@@ -103,7 +86,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemVálidaRetornaUmaLista()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
             origin.SetSeparator(';');
             origin.Validate();
 
@@ -116,7 +99,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComSeparatorInválidoRetornaUmaExcessaoDeFormato()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv, Mapping);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
             origin.SetSeparator('|');
             origin.Validate();
 
@@ -127,7 +110,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComMappginInválidoRetornaUmaExcessaoDeFormato()
         {
 
-            var origin = new PlainTextOrigin<Region>(_pathCsv, MappingInválido);
+            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.MappingInválido);
             origin.SetSeparator(';');
             origin.Validate();
 
