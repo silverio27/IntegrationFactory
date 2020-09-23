@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using IntegrationFactory.Domain.DataSet.Contracts;
+using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.PlainText
 {
@@ -10,7 +12,6 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
         string _path;
         Func<string[], T> _mapping;
         char _separator;
-
 
         public PlainTextOrigin(string path, Func<string[], T> mapping)
         {
@@ -24,11 +25,12 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
             return this;
         }
 
-
         public IEnumerable<T> Get()
         {
-            return File.ReadAllLines(_path).Select(a => a.Split(_separator)).Select(_mapping
-                ).ToList();
+            return File.ReadAllLines(_path)
+                .Select(a => a.Split(_separator))
+                .Select(_mapping)
+                .ToList();
         }
 
         public override void Validate()
@@ -41,6 +43,9 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
 
             if (_separator == '\0')
                 AddNotification("O separador não é válido.");
+
+            if (_mapping == null)
+                AddNotification("O mapeamento não pode ser nulo.");
 
         }
     }

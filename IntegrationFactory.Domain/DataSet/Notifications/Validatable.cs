@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace IntegrationFactory.Domain.DataSet
+namespace IntegrationFactory.Domain.DataSet.Notifications
 {
     public abstract class Validatable : IValidatable
     {

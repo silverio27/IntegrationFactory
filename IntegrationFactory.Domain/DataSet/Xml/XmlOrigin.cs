@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using IntegrationFactory.Domain.DataSet.Contracts;
+using IntegrationFactory.Domain.DataSet.Notifications;
 
-namespace IntegrationFactory.Domain.DataSet.PlainText
+namespace IntegrationFactory.Domain.DataSet.Xml
 {
     public class XmlOrigin<T> : Validatable, IOrigin<T>
     {

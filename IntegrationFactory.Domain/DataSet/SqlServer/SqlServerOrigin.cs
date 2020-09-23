@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Dapper;
+using IntegrationFactory.Domain.DataSet.Contracts;
+using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {

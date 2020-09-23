@@ -13,13 +13,12 @@ JSON | SqlServer | 0% | Não
 REST(Json) | SqlServer | 0% | Não
 SOAP(xml) | SqlServer | 0% | Não
 
-# No momento
-Implementando Sql Server para Sql Server
+# Todo
+Implementando dados que integram com SqlServer
 * Adicionar múltiplos Ids para o Processo de Merge
-* Adicionar validações em origem e destino
-* Adicionar notificações em origem e destino
 * Adicionar propriedade de Resultado ao PipeLine
 * Adicionar observadores para o cliente acompanhar o trabalho
+* Documentar implementação com exemplos
 
 
 ## Nuget

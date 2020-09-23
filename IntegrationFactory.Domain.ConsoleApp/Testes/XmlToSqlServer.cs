@@ -2,8 +2,8 @@ using System;
 using System.Xml.Linq;
 using IntegrationFactory.Domain.ConsoleApp.Model;
 using IntegrationFactory.Domain.ConsoleApp.Util;
-using IntegrationFactory.Domain.DataSet.PlainText;
 using IntegrationFactory.Domain.DataSet.SqlServer;
+using IntegrationFactory.Domain.DataSet.Xml;
 using IntegrationFactory.Domain.PipeLine;
 
 namespace IntegrationFactory.Domain.ConsoleApp.Testes

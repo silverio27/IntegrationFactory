@@ -3,10 +3,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+using IntegrationFactory.Domain.DataSet.Contracts;
+using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {
-    public class SqlServerDestiny :Validatable, IDestiny
+    public class SqlServerDestiny : Validatable, IDestiny
     {
         SqlConnection _connection;
         SqlBulkCopy _sqlBulkCopy;

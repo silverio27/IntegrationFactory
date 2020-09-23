@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using IntegrationFactory.Domain.DataSet;
+using IntegrationFactory.Domain.DataSet.Contracts;
 using IntegrationFactory.Domain.Extensions;
 
 namespace IntegrationFactory.Domain.PipeLine

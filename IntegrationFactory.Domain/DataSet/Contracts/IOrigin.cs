@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using IntegrationFactory.Domain.DataSet.Notifications;
 
-namespace IntegrationFactory.Domain.DataSet
+namespace IntegrationFactory.Domain.DataSet.Contracts
 {
     public interface IOrigin<T> : IValidatable
     {
