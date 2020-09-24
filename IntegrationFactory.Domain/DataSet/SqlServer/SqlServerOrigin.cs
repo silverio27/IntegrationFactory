@@ -21,12 +21,6 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
         {
             return _connection.Query<T>(SqlCommand);
         }
-
-        public void Dispose()
-        {
-            _connection.Dispose();
-        }
-
         public override void Validate()
         {
             throw new System.NotImplementedException();

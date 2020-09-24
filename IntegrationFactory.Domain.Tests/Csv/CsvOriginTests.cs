@@ -83,6 +83,20 @@ namespace IntegrationFactory.Domain.Tests.Csv
         }
 
         [Fact]
+        public void DadaUmaOrigemInválidaComArquivoVazio()
+        {
+
+            var origin = new PlainTextOrigin<Region>(CSV.EmptyPath, CSV.Mapping);
+            origin.SetSeparator(';');
+            origin.Validate();
+
+            var result = origin.Get();
+
+            Assert.Equal("O Arquivo não pode estar vazio.",
+               origin.Notifications.First());
+        }
+
+        [Fact]
         public void DadaUmaOrigemVálidaRetornaUmaLista()
         {
 
@@ -94,6 +108,8 @@ namespace IntegrationFactory.Domain.Tests.Csv
 
             Assert.NotEmpty(result);
         }
+
+
 
         [Fact]
         public void DadaUmaOrigemComSeparatorInválidoRetornaUmaExcessaoDeFormato()

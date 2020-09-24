@@ -12,10 +12,16 @@ namespace IntegrationFactory.Domain.DataSet.Notifications
             }
         }
 
-        public List<string> Notifications { get; private set; } = new List<string>();
+        public List<string> Notifications { get; private set; }
+
 
         public void AddNotification(string notification) => Notifications.Add(notification);
 
         public abstract void Validate();
+
+        public Validatable()
+        {
+            Notifications = new List<string>();
+        }
     }
 }

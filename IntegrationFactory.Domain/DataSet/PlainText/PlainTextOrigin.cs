@@ -38,8 +38,14 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
             if (string.IsNullOrEmpty(_path))
                 AddNotification("O caminho não pode ser vazio ou nulo.");
 
-            if (!File.Exists(_path))
+            var fileExist = File.Exists(_path);
+
+            if (!fileExist)
                 AddNotification("O arquivo não existe no local indicado.");
+                
+            if (fileExist)
+                if (new FileInfo(_path).Length == 0)
+                    AddNotification("O Arquivo não pode estar vazio.");
 
             if (_separator == '\0')
                 AddNotification("O separador não é válido.");
