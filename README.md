@@ -22,6 +22,7 @@ Implementando dados que integram com SqlServer
 * Realizar testes com a implementação de csv to sql server
 * Melhorar design da montagem do PipeLine
 * Eliminar o Dapper das consultas
+* O Código tem que ser configurável através de um arquivo json
 
 
 ## Nuget
