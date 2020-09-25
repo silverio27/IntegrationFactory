@@ -15,13 +15,35 @@ SOAP(xml) | SqlServer | 0% | Não
 
 # Todo
 Implementando dados que integram com SqlServer
-* Adicionar observadores para o cliente acompanhar o trabalho
-* Documentar implementação com exemplos
-* Realizar testes com a implementação de csv to sql server
+### 1º Candidato
+* Possibilitar o processamento de valores entre a operação de extração e carga
+> 
+>   * Exemplos:
+>   1. Remover uma coluna de um arquivo de texto plano
+>   2. Multiplicar uma coluna de preço e quantidade e criar uma coluna de total
+>   3. Implementar uma coluna de data em tempo de execução
+* Melhorar os nomes do métodos para : Extract, Transform e Load
+* Melhorar o contrato de validação para que as classes inicializem inválidas
 * Melhorar design da montagem do PipeLine
+
+### 2º Candidato
+* Implementar a origem por dados em memória (MemoryStream)
+* Implementar a origem por dados em JSON
+como texto e em memória
+
+### 3º Candidato
+* Implementar a origem por dados de uma API Rest
+* Implementar a origem por dados de uma API
+Soap
+> 
+> Necessário explicitar a escolha do tipo de retorno
+
+### 4º Candidato
 * Eliminar o Dapper das consultas
 * O Código tem que ser configurável através de um arquivo json
-* Possibilitar o processamento de valores entre a operação de extração e carga
+* Adicionar observadores para o cliente acompanhar o trabalho
+* Documentar a implementação da pipeline com exemplos
+* Transformar a aplicação em uma CLI
 
 
 ## Nuget
