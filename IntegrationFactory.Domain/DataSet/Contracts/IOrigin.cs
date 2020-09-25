@@ -6,6 +6,7 @@ namespace IntegrationFactory.Domain.DataSet.Contracts
 
     public interface IOrigin<T> : IValidatable
     {
-        IEnumerable<T> Get();
+        IEnumerable<T> Extract();
+        void Transform();
     }
 }

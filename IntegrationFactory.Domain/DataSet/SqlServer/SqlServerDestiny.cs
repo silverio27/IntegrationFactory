@@ -28,7 +28,7 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
                     new SqlBulkCopyColumnMapping(m.Source, m.Target)));
         }
 
-        public Result Synk(DataTable data)
+        public Result Load(DataTable data)
         {
             if (data == null)
                 return new Result(false, "A fonte de dados para integração não pode ser nula.");

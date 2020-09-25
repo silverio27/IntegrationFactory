@@ -17,11 +17,16 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
             _connection = new SqlConnection(connectionString);
             SqlCommand = sqlCommand;
         }
-        public IEnumerable<T> Get()
+        public IEnumerable<T> Extract()
         {
             return _connection.Query<T>(SqlCommand);
         }
         public override void Validate()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Transform()
         {
             throw new System.NotImplementedException();
         }

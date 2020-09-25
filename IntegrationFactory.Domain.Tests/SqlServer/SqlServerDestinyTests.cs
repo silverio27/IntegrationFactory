@@ -69,7 +69,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
         {
             var destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTable);
             destiny.Validate();
-            var result = destiny.Synk(null);
+            var result = destiny.Load(null);
             Assert.Equal("A fonte de dados para integração não pode ser nula.", result.Message);
         }
 
@@ -78,7 +78,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
         {
             var destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTable);
             destiny.Validate();
-            var result = destiny.Synk(data);
+            var result = destiny.Load(data);
             Assert.True(result.Success);
         }
 
@@ -87,7 +87,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
         {
             var destiny = new SqlServerDestiny("Server=.\\SQLEXPRESSXXXX;Database=TESTE;Trusted_Connection=True;", SeedContext.ValidTable);
             destiny.Validate();
-            Assert.Throws<System.Data.SqlClient.SqlException>(() => destiny.Synk(data));
+            Assert.Throws<System.Data.SqlClient.SqlException>(() => destiny.Load(data));
         }
 
 
@@ -108,7 +108,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
                 new Map("x","y")
             });
 
-            Assert.Throws<InvalidOperationException>(() => destiny.Synk(data));
+            Assert.Throws<InvalidOperationException>(() => destiny.Load(data));
         }
 
 
@@ -120,7 +120,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
             destiny.MapToSynk(new List<Map>(){
                 new Map("Identidade","Identidade")
             });
-            var result = destiny.Synk(data);
+            var result = destiny.Load(data);
             Assert.True(result.Success);
         }
 
@@ -130,7 +130,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
             var destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTable);
             destiny.Validate();
             destiny.MapToSynk(null);
-            var result = destiny.Synk(data);
+            var result = destiny.Load(data);
             Assert.True(result.Success);
         }
 
@@ -144,7 +144,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
                 new Map("Sigla","Sigla"),
                 new Map("NomeDaRegiao","NomeDaRegiao")
             });
-            var result = destiny.Synk(data);
+            var result = destiny.Load(data);
             Assert.True(result.Success);
         }
 
@@ -153,7 +153,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
         {
             var destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTableComDuasChaves);
             destiny.Validate();
-            var result = destiny.Synk(data);
+            var result = destiny.Load(data);
             Assert.True(result.Success);
         }
 

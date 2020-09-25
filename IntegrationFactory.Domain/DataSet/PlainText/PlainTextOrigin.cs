@@ -25,7 +25,7 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
             return this;
         }
 
-        public IEnumerable<T> Get()
+        public IEnumerable<T> Extract()
         {
             return File.ReadAllLines(_path)
                 .Select(a => a.Split(_separator))
@@ -53,6 +53,11 @@ namespace IntegrationFactory.Domain.DataSet.PlainText
             if (_mapping == null)
                 AddNotification("O mapeamento não pode ser nulo.");
 
+        }
+
+        public void Transform()
+        {
+            throw new NotImplementedException();
         }
     }
 }

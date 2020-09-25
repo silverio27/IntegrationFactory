@@ -90,7 +90,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
             origin.SetSeparator(';');
             origin.Validate();
 
-            var result = origin.Get();
+            var result = origin.Extract();
 
             Assert.Equal("O Arquivo não pode estar vazio.",
                origin.Notifications.First());
@@ -104,7 +104,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
             origin.SetSeparator(';');
             origin.Validate();
 
-            var result = origin.Get();
+            var result = origin.Extract();
 
             Assert.NotEmpty(result);
         }
@@ -119,7 +119,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
             origin.SetSeparator('|');
             origin.Validate();
 
-            Assert.Throws<System.FormatException>(() => origin.Get());
+            Assert.Throws<System.FormatException>(() => origin.Extract());
         }
 
         [Fact]
@@ -130,7 +130,7 @@ namespace IntegrationFactory.Domain.Tests.Csv
             origin.SetSeparator(';');
             origin.Validate();
 
-            Assert.Throws<System.IndexOutOfRangeException>(() => origin.Get());
+            Assert.Throws<System.IndexOutOfRangeException>(() => origin.Extract());
         }
     }
 }

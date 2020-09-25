@@ -39,7 +39,7 @@ namespace IntegrationFactory.Domain.PipeLine
 
         public IPipeLine<O> Get()
         {
-            OriginData = Origin.Get();
+            OriginData = Origin.Extract();
             Notifications.Add("Dados Obtidos");
             return this;
         }
@@ -48,7 +48,7 @@ namespace IntegrationFactory.Domain.PipeLine
         {
             Destiny.MapToSynk(Map);
             var data = OriginData.ConvertToDataTable();
-            Result = Destiny.Synk(data);
+            Result = Destiny.Load(data);
             Notifications.Add($"Dados Transferidos, {Result.ToString()}");
             return this;
         }

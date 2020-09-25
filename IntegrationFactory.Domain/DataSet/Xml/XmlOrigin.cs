@@ -22,13 +22,18 @@ namespace IntegrationFactory.Domain.DataSet.Xml
             _descendants = descendants;
             return this;
         }
-        public IEnumerable<T> Get()
+        public IEnumerable<T> Extract()
         {
             return XElement.Load(_path).Descendants(_descendants)
              .Select(_mapping);
         }
 
         public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Transform()
         {
             throw new NotImplementedException();
         }

@@ -6,7 +6,7 @@ namespace IntegrationFactory.Domain.DataSet.Contracts
 {
     public interface IDestiny : IValidatable
     {
-        Result Synk(DataTable data);
+        Result Load(DataTable data);
         void MapToSynk(List<Map> maps);
     }
 }
