@@ -16,14 +16,15 @@ SOAP(xml) | SqlServer | 0% | Não
 # Todo
 Implementando dados que integram com SqlServer
 ### 1º Candidato
+* Melhorar o contrato de validação para que as classes inicializem inválidas
+* Melhorar os nomes do métodos para : Extract, Transform e Load
 * Possibilitar o processamento de valores entre a operação de extração e carga
 > 
 >   * Exemplos:
 >   1. Remover uma coluna de um arquivo de texto plano
 >   2. Multiplicar uma coluna de preço e quantidade e criar uma coluna de total
 >   3. Implementar uma coluna de data em tempo de execução
-* Melhorar os nomes do métodos para : Extract, Transform e Load
-* Melhorar o contrato de validação para que as classes inicializem inválidas
+* Explicitar as propriedades de Destino e Origem para melhorar a testabilidade e design do código
 * Melhorar design da montagem do PipeLine
 
 ### 2º Candidato
