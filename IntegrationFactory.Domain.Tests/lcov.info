@@ -14,51 +14,54 @@ DA:17,0
 FN:18,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Notifications()
 FNDA:0,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Notifications()
 DA:19,0
-FN:21,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetOrigin(IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<O>)
+FN:19,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Result()
+FNDA:0,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Result()
+DA:20,0
+FN:22,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetOrigin(IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<O>)
 FNDA:0,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetOrigin(IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<O>)
-DA:22,0
 DA:23,0
 DA:24,0
 DA:25,0
-FN:27,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetDestiny(IntegrationFactory.Domain.DataSet.Contracts.IDestiny)
+DA:26,0
+FN:28,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetDestiny(IntegrationFactory.Domain.DataSet.Contracts.IDestiny)
 FNDA:0,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetDestiny(IntegrationFactory.Domain.DataSet.Contracts.IDestiny)
-DA:28,0
 DA:29,0
 DA:30,0
 DA:31,0
-FN:33,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::AddMap(System.String,System.String)
+DA:32,0
+FN:34,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::AddMap(System.String,System.String)
 FNDA:0,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::AddMap(System.String,System.String)
-DA:34,0
 DA:35,0
 DA:36,0
 DA:37,0
-FN:39,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Get()
+DA:38,0
+FN:40,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Get()
 FNDA:0,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Get()
-DA:40,0
 DA:41,0
 DA:42,0
 DA:43,0
 DA:44,0
-FN:46,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Synk()
+DA:45,0
+FN:47,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Synk()
 FNDA:0,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Synk()
-DA:47,0
 DA:48,0
 DA:49,0
 DA:50,0
 DA:51,0
 DA:52,0
 DA:53,0
-FN:55,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::OtherAction(System.Action)
+DA:54,0
+FN:56,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::OtherAction(System.Action)
 FNDA:0,IntegrationFactory.Domain.PipeLine.IPipeLine`1<O> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::OtherAction(System.Action)
-DA:56,0
 DA:57,0
 DA:58,0
 DA:59,0
-LF:33
+DA:60,0
+LF:34
 LH:0
 BRF:0
 BRH:0
-FNF:11
+FNF:12
 FNH:0
 end_of_record
 SF:c:\Work\IntegrationFactory\IntegrationFactory.Domain\Extensions\DataTableExtensions.cs
@@ -99,18 +102,18 @@ FNH:1
 end_of_record
 SF:c:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\Map.cs
 FN:10,System.String IntegrationFactory.Domain.DataSet.Map::get_Source()
-FNDA:8,System.String IntegrationFactory.Domain.DataSet.Map::get_Source()
-DA:11,8
+FNDA:14,System.String IntegrationFactory.Domain.DataSet.Map::get_Source()
+DA:11,14
 FN:11,System.String IntegrationFactory.Domain.DataSet.Map::get_Target()
-FNDA:8,System.String IntegrationFactory.Domain.DataSet.Map::get_Target()
-DA:12,8
+FNDA:14,System.String IntegrationFactory.Domain.DataSet.Map::get_Target()
+DA:12,14
 FN:4,System.Void IntegrationFactory.Domain.DataSet.Map::.ctor(System.String,System.String)
-FNDA:4,System.Void IntegrationFactory.Domain.DataSet.Map::.ctor(System.String,System.String)
-DA:5,4
-DA:6,4
-DA:7,4
-DA:8,4
-DA:9,4
+FNDA:7,System.Void IntegrationFactory.Domain.DataSet.Map::.ctor(System.String,System.String)
+DA:5,7
+DA:6,7
+DA:7,7
+DA:8,7
+DA:9,7
 LF:7
 LH:7
 BRF:0
@@ -120,11 +123,11 @@ FNH:3
 end_of_record
 SF:c:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\Result.cs
 FN:11,System.Boolean IntegrationFactory.Domain.DataSet.Result::get_Success()
-FNDA:7,System.Boolean IntegrationFactory.Domain.DataSet.Result::get_Success()
-DA:12,7
+FNDA:11,System.Boolean IntegrationFactory.Domain.DataSet.Result::get_Success()
+DA:12,11
 FN:12,System.String IntegrationFactory.Domain.DataSet.Result::get_Message()
-FNDA:5,System.String IntegrationFactory.Domain.DataSet.Result::get_Message()
-DA:13,5
+FNDA:7,System.String IntegrationFactory.Domain.DataSet.Result::get_Message()
+DA:13,7
 FN:13,System.Object IntegrationFactory.Domain.DataSet.Result::get_Data()
 FNDA:0,System.Object IntegrationFactory.Domain.DataSet.Result::get_Data()
 DA:14,0
@@ -134,13 +137,13 @@ DA:17,0
 DA:18,0
 DA:19,0
 FN:4,System.Void IntegrationFactory.Domain.DataSet.Result::.ctor(System.Boolean,System.String,System.Object)
-FNDA:4,System.Void IntegrationFactory.Domain.DataSet.Result::.ctor(System.Boolean,System.String,System.Object)
-DA:5,4
-DA:6,4
-DA:7,4
-DA:8,4
-DA:9,4
-DA:10,4
+FNDA:6,System.Void IntegrationFactory.Domain.DataSet.Result::.ctor(System.Boolean,System.String,System.Object)
+DA:5,6
+DA:6,6
+DA:7,6
+DA:8,6
+DA:9,6
+DA:10,6
 LF:12
 LH:8
 BRF:0
@@ -181,60 +184,60 @@ FNH:0
 end_of_record
 SF:c:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\SqlServer\SqlServerDestiny.cs
 FN:13,System.String IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Table()
-FNDA:59,System.String IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Table()
-DA:14,59
+FNDA:90,System.String IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Table()
+DA:14,90
 FN:23,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::MapToSynk(System.Collections.Generic.List`1<IntegrationFactory.Domain.DataSet.Map>)
-FNDA:3,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::MapToSynk(System.Collections.Generic.List`1<IntegrationFactory.Domain.DataSet.Map>)
-DA:24,3
-DA:25,4
-DA:26,2
-DA:27,6
-DA:28,6
-DA:29,3
-BRDA:25,7,1,2
-BRDA:25,7,0,3
+FNDA:4,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::MapToSynk(System.Collections.Generic.List`1<IntegrationFactory.Domain.DataSet.Map>)
+DA:24,4
+DA:25,5
+DA:26,3
+DA:27,10
+DA:28,10
+DA:29,4
+BRDA:25,7,1,3
+BRDA:25,7,0,4
 FN:31,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Synk(System.Data.DataTable)
-FNDA:6,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Synk(System.Data.DataTable)
-DA:32,6
-DA:33,6
+FNDA:8,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Synk(System.Data.DataTable)
+DA:32,8
+DA:33,8
 DA:34,1
-DA:36,5
-DA:37,4
-DA:38,4
-DA:39,3
-DA:40,3
-DA:41,4
+DA:36,7
+DA:37,6
+DA:38,6
+DA:39,5
+DA:40,5
+DA:41,6
 BRDA:33,7,0,1
-BRDA:33,7,1,5
+BRDA:33,7,1,7
 FN:43,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Bulk(System.Data.DataTable)
-FNDA:4,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Bulk(System.Data.DataTable)
-DA:44,4
-DA:45,4
-DA:46,4
-DA:47,4
-DA:48,4
-DA:49,3
+FNDA:6,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Bulk(System.Data.DataTable)
+DA:44,6
+DA:45,6
+DA:46,6
+DA:47,6
+DA:48,6
+DA:49,5
 FN:52,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Validate()
-FNDA:11,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Validate()
-DA:53,11
-DA:54,11
-DA:56,11
+FNDA:13,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Validate()
+DA:53,13
+DA:54,13
+DA:56,13
 DA:57,2
-DA:59,11
+DA:59,13
 DA:60,2
-DA:62,11
+DA:62,13
 BRDA:56,21,0,2
-BRDA:56,21,1,11
+BRDA:56,21,1,13
 BRDA:59,48,0,2
-BRDA:59,48,1,11
+BRDA:59,48,1,13
 FN:15,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::.ctor(System.String,System.String)
-FNDA:16,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::.ctor(System.String,System.String)
-DA:16,16
-DA:17,16
-DA:18,16
-DA:19,15
-DA:20,15
-DA:21,15
+FNDA:26,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::.ctor(System.String,System.String)
+DA:16,26
+DA:17,26
+DA:18,26
+DA:19,25
+DA:20,25
+DA:21,25
 LF:35
 LH:35
 BRF:8
@@ -271,66 +274,75 @@ FNH:0
 end_of_record
 SF:c:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\SqlServer\Extensions\SqlServerMerge.cs
 FN:10,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::CreateTemporaryTable(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:5,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::CreateTemporaryTable(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:11,5
-DA:12,5
-DA:13,5
-DA:14,5
-DA:15,5
-DA:16,5
+FNDA:7,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::CreateTemporaryTable(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:11,7
+DA:12,7
+DA:13,7
+DA:14,7
+DA:15,7
+DA:16,7
 FN:18,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::Merge(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:3,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::Merge(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:19,3
-DA:20,3
-DA:21,3
-DA:22,3
-DA:23,3
-FN:25,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKey(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:5,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKey(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:26,5
-DA:27,5
-DA:28,5
-DA:29,5
-DA:30,5
-DA:31,5
-FN:33,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.String)
-FNDA:4,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.String)
-DA:34,4
-DA:35,4
-DA:36,4
-DA:37,4
-DA:40,4
-DA:42,4
-DA:43,4
-DA:44,32
-DA:45,12
-DA:46,12
-DA:47,12
-DA:48,12
-DA:49,12
-DA:50,12
-DA:52,4
-DA:53,4
-DA:54,16
-DA:55,4
-DA:57,4
-DA:58,4
-BRDA:44,238,1,12
-BRDA:48,188,0,4
-BRDA:48,188,1,8
-BRDA:44,238,0,4
-FN:60,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:5,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:61,5
-DA:62,5
-DA:63,5
-DA:64,5
-DA:65,5
-DA:66,5
-LF:43
-LH:43
-BRF:4
-BRH:4
+FNDA:5,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::Merge(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:19,5
+DA:20,5
+DA:21,5
+DA:22,5
+DA:23,5
+FN:25,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKeys(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+FNDA:9,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKeys(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:26,9
+DA:27,9
+DA:28,9
+DA:29,9
+DA:30,9
+DA:31,9
+FN:33,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.Collections.Generic.List`1<System.String>)
+FNDA:7,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.Collections.Generic.List`1<System.String>)
+DA:34,7
+DA:35,7
+DA:36,7
+DA:37,32
+DA:38,9
+DA:39,9
+DA:40,9
+DA:41,9
+DA:42,9
+DA:44,7
+DA:46,7
+DA:47,7
+DA:48,58
+DA:49,22
+DA:50,22
+DA:51,22
+DA:52,22
+DA:53,22
+DA:54,22
+DA:56,7
+DA:57,7
+DA:58,29
+DA:59,7
+DA:61,7
+DA:62,7
+BRDA:37,163,1,9
+BRDA:40,80,0,2
+BRDA:40,80,1,7
+BRDA:37,163,0,7
+BRDA:48,318,1,22
+BRDA:52,265,0,7
+BRDA:52,265,1,15
+BRDA:48,318,0,7
+FN:64,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+FNDA:8,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:65,8
+DA:66,8
+DA:67,8
+DA:68,8
+DA:69,8
+DA:70,8
+LF:48
+LH:48
+BRF:8
+BRH:8
 FNF:5
 FNH:5
 end_of_record
@@ -398,17 +410,17 @@ DA:10,2
 DA:11,2
 DA:12,2
 FN:14,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Notifications()
-FNDA:56,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Notifications()
-DA:15,56
+FNDA:66,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Notifications()
+DA:15,66
 FN:17,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::AddNotification(System.String)
 FNDA:16,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::AddNotification(System.String)
 DA:18,16
 FN:21,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::.ctor()
-FNDA:27,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::.ctor()
-DA:22,27
-DA:23,27
-DA:24,27
-DA:25,27
+FNDA:37,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::.ctor()
+DA:22,37
+DA:23,37
+DA:24,37
+DA:25,37
 LF:9
 LH:9
 BRF:0

@@ -17,25 +17,29 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer.Extensions
 
         public static void Merge(this SqlServerDestiny destiny)
         {
-            string key = destiny.GetColumnKey();
-            string sql = destiny.GetMergeCommand(key);
+            var keys = destiny.GetColumnKeys();
+            string sql = destiny.GetMergeCommand(keys);
             destiny.Connection.Execute(sql);
         }
 
-        public static string GetColumnKey(this SqlServerDestiny destiny)
+        public static List<string> GetColumnKeys(this SqlServerDestiny destiny)
         {
             string sql = $@"select COLUMN_NAME 
                                 from INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
                             where TABLE_NAME like '{destiny.Table}'";
-            return destiny.Connection.QueryFirst<string>(sql);
+            return destiny.Connection.Query<string>(sql).ToList();
         }
 
-        public static string GetMergeCommand(this SqlServerDestiny destiny, string key)
+        public static string GetMergeCommand(this SqlServerDestiny destiny, List<string> keys)
         {
             string sql = $" Merge {destiny.Table} as Destiny \n";
             sql += $" USING #{destiny.Table} as Origin \n";
-            sql += $" ON Destiny.{key} = Origin.{key} \n";
-
+            for (int i = 0; i < keys.Count; i++)
+            {
+                string key = keys[i];
+                sql += $" {(i == 0 ? "ON" : "AND")} Destiny.{key} = Origin.{key} ";
+                sql += "\n";
+            }
 
             var columns = destiny.GetColumns();
 

@@ -10,13 +10,17 @@ namespace IntegrationFactory.Domain.Tests.SeedWork
         {
             using (var connection = new SqlConnection(Connections.LocalDataBase))
             {
-
                 connection.Open();
-                var command = connection.CreateCommand();
-                command.CommandText = File.ReadAllText(SqlSeedData.Path);
-                command.ExecuteNonQuery();
+                SqlSeedData.Seeds.ForEach(seed => connection.Seed(seed));
             }
 
+        }
+
+        private static void Seed(this SqlConnection connection, string sqlcommand)
+        {
+            var command = connection.CreateCommand();
+            command.CommandText = File.ReadAllText(sqlcommand);
+            command.ExecuteNonQuery();
         }
 
         public static DataTable GetMockData()
@@ -32,5 +36,7 @@ namespace IntegrationFactory.Domain.Tests.SeedWork
         }
 
         public readonly static string ValidTable = "RegiaoTest";
+        public readonly static string ValidTableExtend = "RegiaoTestExtends";
+        public readonly static string ValidTableComDuasChaves = "RegiaoComDuasChaves";
     }
 }

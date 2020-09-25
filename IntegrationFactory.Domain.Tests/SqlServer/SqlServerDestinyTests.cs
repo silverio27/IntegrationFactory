@@ -134,5 +134,28 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
             Assert.True(result.Success);
         }
 
+        [Fact]
+        public void DadoUmDestinoVálidoEUmMapeamentoComColunasAMaisExecutaASincronização()
+        {
+            var destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTableExtend);
+            destiny.Validate();
+            destiny.MapToSynk(new List<Map>(){
+                new Map("Identidade","Identidade"),
+                new Map("Sigla","Sigla"),
+                new Map("NomeDaRegiao","NomeDaRegiao")
+            });
+            var result = destiny.Synk(data);
+            Assert.True(result.Success);
+        }
+
+        [Fact]
+        public void DadoUmDestinoVálidoEmUmaTabelaComUmaChavePrimariaComposta()
+        {
+            var destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTableComDuasChaves);
+            destiny.Validate();
+            var result = destiny.Synk(data);
+            Assert.True(result.Success);
+        }
+
     }
 }

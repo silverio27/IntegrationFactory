@@ -20,6 +20,8 @@ namespace IntegrationFactory.Domain.PipeLine
         IEnumerable<O> OriginData { get; }
         List<string> Notifications { get; }
 
+        Result Result { get; }
+
         IPipeLine<O> SetOrigin(IOrigin<O> origin);
         IPipeLine<O> SetDestiny(IDestiny destiny);
         IPipeLine<O> AddMap(string source, string target);

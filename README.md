@@ -15,15 +15,13 @@ SOAP(xml) | SqlServer | 0% | Não
 
 # Todo
 Implementando dados que integram com SqlServer
-* Adicionar múltiplos Ids para o Processo de Merge
-* Adicionar propriedade de Resultado ao PipeLine
 * Adicionar observadores para o cliente acompanhar o trabalho
 * Documentar implementação com exemplos
 * Realizar testes com a implementação de csv to sql server
 * Melhorar design da montagem do PipeLine
 * Eliminar o Dapper das consultas
 * O Código tem que ser configurável através de um arquivo json
-* Possibilitar o processamento de valores entrea a operação de extração e carga
+* Possibilitar o processamento de valores entre a operação de extração e carga
 
 
 ## Nuget

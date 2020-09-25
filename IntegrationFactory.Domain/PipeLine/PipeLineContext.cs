@@ -17,6 +17,7 @@ namespace IntegrationFactory.Domain.PipeLine
         public IEnumerable<O> OriginData { get; private set; }
 
         public List<string> Notifications { get; private set; } = new List<string>();
+        public Result Result { get; private set; }
 
         public IPipeLine<O> SetOrigin(IOrigin<O> origin)
         {
@@ -47,8 +48,8 @@ namespace IntegrationFactory.Domain.PipeLine
         {
             Destiny.MapToSynk(Map);
             var data = OriginData.ConvertToDataTable();
-            var result = Destiny.Synk(data);
-            Notifications.Add($"Dados Transferidos, {result.ToString()}");
+            Result = Destiny.Synk(data);
+            Notifications.Add($"Dados Transferidos, {Result.ToString()}");
             return this;
         }
 
