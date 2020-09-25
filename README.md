@@ -17,8 +17,7 @@ SOAP(xml) | SqlServer | 0% | Não
 Implementando dados que integram com SqlServer
 ### 1º Candidato
 * Melhorar o contrato de validação para que as classes inicializem inválidas
-* Melhorar os nomes do métodos para : Extract, Transform e Load
-* Possibilitar o processamento de valores entre a operação de extração e carga
+* Possibilitar o processamento de valores entre a operação de extração e carga (implementar o Transform)
 * Explicitar as propriedades de Destino e Origem para melhorar a testabilidade e design do código
 > 
 >   * Exemplos:
