@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 
-
 namespace IntegrationFactory.Domain.DataSet.SqlServer.Extensions
 {
     public static class SqlServerMerge

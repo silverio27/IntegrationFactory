@@ -6,27 +6,33 @@ using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {
-    public class SqlServerOrigin<T> : Validatable, IOrigin<T>
+    public class SqlServerOrigin<T> : Validatable, ISqlServerOrigin<T>
     {
+        public SqlConnection Connection { get; private set; }
 
-        SqlConnection _connection;
         public string SqlCommand { get; private set; }
 
-        public SqlServerOrigin(string connectionString, string sqlCommand)
+        public IEnumerable<T> Data { get; private set; }
+
+        public ISqlServerOrigin<T> SetConnection(string connection)
         {
-            _connection = new SqlConnection(connectionString);
-            SqlCommand = sqlCommand;
-        }
-        public IEnumerable<T> Extract()
-        {
-            return _connection.Query<T>(SqlCommand);
-        }
-        public override void Validate()
-        {
-            throw new System.NotImplementedException();
+            Connection = new SqlConnection(connection);
+            return this;
         }
 
-        public void Transform()
+        public ISqlServerOrigin<T> SetSqlCommand(string sqlCommand)
+        {
+            SqlCommand = sqlCommand;
+            return this;
+        }
+
+        public IOrigin<T> Extract()
+        {
+            Data = Connection.Query<T>(SqlCommand);
+            return this;
+        }
+
+        public override void Validate()
         {
             throw new System.NotImplementedException();
         }

@@ -16,10 +16,10 @@ namespace IntegrationFactory.Domain.ConsoleApp
             Console.WriteLine(FiggleFonts.Standard.Render("Integration Factory"));
             Console.ForegroundColor = ConsoleColor.White;
 
+            CsvToSqlServer.Execute();
 
-            XmlToSqlServer.Execute();
+            // XmlToSqlServer.Execute();
             // TxtToSqlServer.Execute();
-            // CsvToSqlServer.Execute();
             // SqlServerToSqlServer.Execute();
 
 

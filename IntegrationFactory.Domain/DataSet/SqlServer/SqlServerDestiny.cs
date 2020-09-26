@@ -7,47 +7,40 @@ using IntegrationFactory.Domain.DataSet.SqlServer.Extensions;
 
 namespace IntegrationFactory.Domain.DataSet.SqlServer
 {
-    public partial class SqlServerDestiny : Validatable, IDestiny
+    public partial class SqlServerDestiny : Validatable, ISqlServerDestiny
     {
-        public SqlConnection Connection;
-        SqlBulkCopy _sqlBulkCopy;
+        public SqlConnection Connection { get; private set; }
+
         public string Table { get; private set; }
 
-        public SqlServerDestiny(string connectionString, string table)
+        public Result Result { get; private set; }
+
+        public List<Map> Mapping { get; private set; }
+
+        SqlBulkCopy _sqlBulkCopy;
+
+        public ISqlServerDestiny SetConnection(string connection)
         {
-            Connection = new SqlConnection(connectionString);
+            Connection = new SqlConnection(connection);
             _sqlBulkCopy = new SqlBulkCopy(Connection);
-            Table = table;
+            return this;
         }
 
-        public void MapToSynk(List<Map> maps)
+        public IDestiny SetMapping(List<Map> mapping)
         {
-            if (maps == null) return;
-            maps.ForEach((m) =>
+            Mapping = mapping;
+            if (mapping == null) return this;
+            mapping.ForEach((m) =>
                 _sqlBulkCopy.ColumnMappings.Add(
                     new SqlBulkCopyColumnMapping(m.Source, m.Target)));
+            return this;
         }
 
-        public Result Load(DataTable data)
+        public ISqlServerDestiny SetTable(string table)
         {
-            if (data == null)
-                return new Result(false, "A fonte de dados para integração não pode ser nula.");
-
-            Connection.Open();
-            this.CreateTemporaryTable();
-            Bulk(data);
-            this.Merge();
-            return new Result(true, $"{data.Rows.Count} itens incluídos");
+            Table = table;
+            return this;
         }
-
-        private void Bulk(DataTable data)
-        {
-            _sqlBulkCopy.BulkCopyTimeout = 0;
-            _sqlBulkCopy.BatchSize = data.Rows.Count;
-            _sqlBulkCopy.DestinationTableName = $"#{Table}";
-            _sqlBulkCopy.WriteToServer(data);
-        }
-
 
         public override void Validate()
         {
@@ -58,7 +51,32 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
 
             if (string.IsNullOrEmpty(Table))
                 AddNotification("A tabela de destino não pode ser vazio ou nulo.");
-
         }
+
+
+        public IDestiny Load(DataTable data)
+        {
+            if (data == null)
+            {
+                Result = new Result(false, "A fonte de dados para integração não pode ser nula.");
+                return this;
+            }
+
+            Connection.Open();
+            this.CreateTemporaryTable();
+            Bulk(data);
+            this.Merge();
+            Result = new Result(true, $"{data.Rows.Count} itens incluídos");
+            return this;
+        }
+
+        private void Bulk(DataTable data)
+        {
+            _sqlBulkCopy.BulkCopyTimeout = 0;
+            _sqlBulkCopy.BatchSize = data.Rows.Count;
+            _sqlBulkCopy.DestinationTableName = $"#{Table}";
+            _sqlBulkCopy.WriteToServer(data);
+        }
+
     }
 }

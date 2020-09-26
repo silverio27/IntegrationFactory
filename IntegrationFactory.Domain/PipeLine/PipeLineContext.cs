@@ -1,62 +1,56 @@
-using System;
-using System.Collections.Generic;
-using IntegrationFactory.Domain.DataSet;
 using IntegrationFactory.Domain.DataSet.Contracts;
+using IntegrationFactory.Domain.DataSet.Notifications;
 using IntegrationFactory.Domain.Extensions;
 
 namespace IntegrationFactory.Domain.PipeLine
 {
-    public class PipeLineContext<O> : IPipeLine<O>
+    public class PipeLineContext<T> : Validatable, IPipeLine<T>
     {
-        public IOrigin<O> Origin { get; private set; }
+        public IOrigin<T> Origin { get; private set; }
 
         public IDestiny Destiny { get; private set; }
 
-        public List<Map> Map { get; private set; } = new List<Map>();
-
-        public IEnumerable<O> OriginData { get; private set; }
-
-        public List<string> Notifications { get; private set; } = new List<string>();
-        public Result Result { get; private set; }
-
-        public IPipeLine<O> SetOrigin(IOrigin<O> origin)
+        public IPipeLine<T> SetOrigin(IOrigin<T> origin)
         {
             Origin = origin;
+            Origin.Validate();
             return this;
         }
 
-        public IPipeLine<O> SetDestiny(IDestiny destiny)
+        public IPipeLine<T> SetDestiny(IDestiny destiny)
         {
             Destiny = destiny;
+            Destiny.Validate();
             return this;
         }
 
-        public IPipeLine<O> AddMap(string source, string target)
+        public override void Validate()
         {
-            Map.Add(new Map(source, target));
+            if (!Origin.Valid)
+                this.Notifications.AddRange(Origin.Notifications);
+
+            if (!Destiny.Valid)
+                this.Notifications.AddRange(Destiny.Notifications);
+        }
+
+        public IPipeLine<T> Extract()
+        {
+            if (!this.Valid)
+                return this;
+
+            Origin.Extract();
             return this;
         }
 
-        public IPipeLine<O> Get()
+        public IPipeLine<T> Load()
         {
-            OriginData = Origin.Extract();
-            Notifications.Add("Dados Obtidos");
+            if (!this.Valid)
+                return this;
+
+            var data = Origin.Data.ConvertToDataTable();
+            Destiny.Load(data);
             return this;
         }
 
-        public IPipeLine<O> Synk()
-        {
-            Destiny.MapToSynk(Map);
-            var data = OriginData.ConvertToDataTable();
-            Result = Destiny.Load(data);
-            Notifications.Add($"Dados Transferidos, {Result.ToString()}");
-            return this;
-        }
-
-        public IPipeLine<O> OtherAction(Action action)
-        {
-            action();
-            return this;
-        }
     }
 }

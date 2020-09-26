@@ -13,21 +13,21 @@ namespace IntegrationFactory.Domain.ConsoleApp.Testes
         public static void Execute()
         {
 
-            var origin = new PlainTextOrigin<Region>("Regiao.txt",
-            Mapping()).SetSeparator('|');
+            // var origin = new PlainTextOrigin<Region>("Regiao.txt",
+            // Mapping()).SetSeparator('|');
 
-            var destiny = new SqlServerDestiny(Connections.LocalDataBase, "Regiao");
+            // var destiny = new SqlServerDestiny(Connections.LocalDataBase, "Regiao");
 
-            var pipeLine = new PipeLineContext<Region>()
-                  .SetOrigin(origin)
-                  .SetDestiny(destiny)
-                  .AddMap("Id", "Identidade")
-                  .AddMap("Initials", "Sigla")
-                  .AddMap("Name", "NomeDaRegiao")
-                  .Get()
-                  .Synk();
+            // var pipeLine = new PipeLineContext<Region>()
+            //       .SetOrigin(origin)
+            //       .SetDestiny(destiny)
+            //       .AddMap("Id", "Identidade")
+            //       .AddMap("Initials", "Sigla")
+            //       .AddMap("Name", "NomeDaRegiao")
+            //       .Get()
+            //       .Synk();
 
-            pipeLine.WriteNotifications();
+            // pipeLine.WriteNotifications();
         }
 
         private static Func<string[], Region> Mapping()

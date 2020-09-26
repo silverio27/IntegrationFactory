@@ -3,10 +3,9 @@ using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.Contracts
 {
-
     public interface IOrigin<T> : IValidatable
     {
-        IEnumerable<T> Extract();
-        void Transform();
+        IEnumerable<T> Data { get; }
+        IOrigin<T> Extract();
     }
 }

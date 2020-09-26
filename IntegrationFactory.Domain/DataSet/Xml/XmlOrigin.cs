@@ -7,25 +7,32 @@ using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.Xml
 {
-    public class XmlOrigin<T> : Validatable, IOrigin<T>
+    public class XmlOrigin<T> : Validatable, IXmlOrigin<T>
     {
-        string _path;
-        Func<XElement, T> _mapping;
-        string _descendants;
-        public XmlOrigin(string path, Func<XElement, T> mapping)
+        public string Path { get; private set; }
+
+        public Func<XElement, T> Mapping { get; private set; }
+
+        public string Descendants { get; private set; }
+
+        public IEnumerable<T> Data { get; private set; }
+
+        public IXmlOrigin<T> SetPath(string path)
         {
-            _path = path;
-            _mapping = mapping;
-        }
-        public XmlOrigin<T> SetDescendants(string descendants)
-        {
-            _descendants = descendants;
+            Path = path;
             return this;
         }
-        public IEnumerable<T> Extract()
+
+        public IXmlOrigin<T> SetDescendants(string descendants)
         {
-            return XElement.Load(_path).Descendants(_descendants)
-             .Select(_mapping);
+            Descendants = descendants;
+            return this;
+        }
+
+        public IXmlOrigin<T> SetMapping(Func<XElement, T> mapping)
+        {
+            Mapping = mapping;
+            return this;
         }
 
         public override void Validate()
@@ -33,9 +40,12 @@ namespace IntegrationFactory.Domain.DataSet.Xml
             throw new NotImplementedException();
         }
 
-        public void Transform()
+        public IOrigin<T> Extract()
         {
-            throw new NotImplementedException();
+            Data = XElement.Load(Path).Descendants(Descendants)
+               .Select(Mapping);
+            return this;
         }
+
     }
 }

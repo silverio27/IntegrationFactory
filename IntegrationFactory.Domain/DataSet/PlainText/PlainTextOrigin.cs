@@ -7,57 +7,63 @@ using IntegrationFactory.Domain.DataSet.Notifications;
 
 namespace IntegrationFactory.Domain.DataSet.PlainText
 {
-    public class PlainTextOrigin<T> : Validatable, IOrigin<T>
+    public class PlainTextOrigin<T> : Validatable, IPlainTextOrigin<T>
     {
-        string _path;
-        Func<string[], T> _mapping;
-        char _separator;
+        public string Path { get; private set; }
 
-        public PlainTextOrigin(string path, Func<string[], T> mapping)
-        {
-            _path = path;
-            _mapping = mapping;
-        }
+        public Func<string[], T> Mapping { get; private set; }
 
-        public PlainTextOrigin<T> SetSeparator(char separator)
+        public char Separator { get; private set; }
+
+        public IEnumerable<T> Data { get; private set; }
+
+        public IPlainTextOrigin<T> SetPath(string path)
         {
-            _separator = separator;
+            Path = path;
             return this;
         }
 
-        public IEnumerable<T> Extract()
+        public IPlainTextOrigin<T> SetMapping(Func<string[], T> mapping)
         {
-            return File.ReadAllLines(_path)
-                .Select(a => a.Split(_separator))
-                .Select(_mapping)
-                .ToList();
+            Mapping = mapping;
+            return this;
+        }
+
+        public IPlainTextOrigin<T> SetSeparator(char separator)
+        {
+            Separator = separator;
+            return this;
         }
 
         public override void Validate()
         {
-            if (string.IsNullOrEmpty(_path))
+            if (string.IsNullOrEmpty(Path))
                 AddNotification("O caminho não pode ser vazio ou nulo.");
 
-            var fileExist = File.Exists(_path);
+            var fileExist = File.Exists(Path);
 
             if (!fileExist)
                 AddNotification("O arquivo não existe no local indicado.");
-                
+
             if (fileExist)
-                if (new FileInfo(_path).Length == 0)
+                if (new FileInfo(Path).Length == 0)
                     AddNotification("O Arquivo não pode estar vazio.");
 
-            if (_separator == '\0')
+            if (Separator == '\0')
                 AddNotification("O separador não é válido.");
 
-            if (_mapping == null)
+            if (Mapping == null)
                 AddNotification("O mapeamento não pode ser nulo.");
-
         }
 
-        public void Transform()
+        public IOrigin<T> Extract()
         {
-            throw new NotImplementedException();
+            this.Data = File.ReadAllLines(Path)
+                 .Select(a => a.Split(Separator))
+                 .Select(Mapping)
+                 .ToList();
+            return this;
         }
+
     }
 }

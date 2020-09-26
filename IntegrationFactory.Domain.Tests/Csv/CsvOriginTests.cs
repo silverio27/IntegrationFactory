@@ -13,7 +13,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemVálida()
         {
-            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.Path);
+            origin.SetMapping(CSV.Mapping);
             origin.SetSeparator(';');
             origin.Validate();
 
@@ -23,7 +25,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoVazio()
         {
-            var origin = new PlainTextOrigin<Region>("", CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath("");
+            origin.SetMapping(CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O caminho não pode ser vazio ou nulo.",
@@ -33,7 +37,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoNulo()
         {
-            var origin = new PlainTextOrigin<Region>(null, CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(null);
+            origin.SetMapping(CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O caminho não pode ser vazio ou nulo.",
@@ -43,7 +49,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoInválido()
         {
-            var origin = new PlainTextOrigin<Region>("RRRRRR", CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath("RRRRRR");
+            origin.SetMapping(CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O arquivo não existe no local indicado.",
@@ -54,17 +62,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComSeparadorNulo()
         {
 
-            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
-            origin.Validate();
-
-            Assert.Equal("O separador não é válido.",
-                origin.Notifications.First());
-        }
-        [Fact]
-        public void DadaUmaOrigemSemConfigurarUmSeparador()
-        {
-
-            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.Path);
+            origin.SetMapping(CSV.Mapping);
             origin.Validate();
 
             Assert.Equal("O separador não é válido.",
@@ -74,7 +74,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComUmMappingNulo()
         {
-            var origin = new PlainTextOrigin<Region>(CSV.Path, null);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.Path);
+            origin.SetMapping(null);
             origin.SetSeparator(';');
             origin.Validate();
 
@@ -86,11 +88,11 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemInválidaComArquivoVazio()
         {
 
-            var origin = new PlainTextOrigin<Region>(CSV.EmptyPath, CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.EmptyPath);
+            origin.SetMapping(CSV.Mapping);
             origin.SetSeparator(';');
             origin.Validate();
-
-            var result = origin.Extract();
 
             Assert.Equal("O Arquivo não pode estar vazio.",
                origin.Notifications.First());
@@ -100,22 +102,25 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemVálidaRetornaUmaLista()
         {
 
-            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.Path);
+            origin.SetMapping(CSV.Mapping);
             origin.SetSeparator(';');
             origin.Validate();
 
             var result = origin.Extract();
 
-            Assert.NotEmpty(result);
+            Assert.NotEmpty(result.Data);
         }
-
 
 
         [Fact]
         public void DadaUmaOrigemComSeparatorInválidoRetornaUmaExcessaoDeFormato()
         {
 
-            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.Mapping);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.Path);
+            origin.SetMapping(CSV.Mapping);
             origin.SetSeparator('|');
             origin.Validate();
 
@@ -126,7 +131,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComMappginInválidoRetornaUmaExcessaoDeFormato()
         {
 
-            var origin = new PlainTextOrigin<Region>(CSV.Path, CSV.MappingInválido);
+            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            origin.SetPath(CSV.Path);
+            origin.SetMapping(CSV.MappingInválido);
             origin.SetSeparator(';');
             origin.Validate();
 

@@ -14,9 +14,13 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
         SqlServerDestiny destinyComChavePrimariaComposta;
         public SqlServerDestinyExtensionsTests()
         {
-            destiny = new SqlServerDestiny(Connections.LocalDataBase, SeedContext.ValidTable);
-            destinyComChavePrimariaComposta = new SqlServerDestiny(Connections.LocalDataBase, 
-                SeedContext.ValidTableComDuasChaves);
+            destiny = new SqlServerDestiny();
+            destiny.SetConnection(Connections.LocalDataBase);
+            destiny.SetTable(SeedContext.ValidTable);
+
+            destinyComChavePrimariaComposta = new SqlServerDestiny();
+            destinyComChavePrimariaComposta.SetConnection(Connections.LocalDataBase);
+            destinyComChavePrimariaComposta.SetTable(SeedContext.ValidTableComDuasChaves);
         }
 
         [Fact]

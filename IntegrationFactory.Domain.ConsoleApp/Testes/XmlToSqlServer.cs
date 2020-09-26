@@ -13,24 +13,24 @@ namespace IntegrationFactory.Domain.ConsoleApp.Testes
 
         public static void Execute()
         {
-            var origin = new XmlOrigin<Region>("Region.xml", Mapping())
-            .SetDescendants("Regiao");
+            // var origin = new XmlOrigin<Region>("Region.xml", Mapping())
+            // .SetDescendants("Regiao");
 
-            var destiny = new SqlServerDestiny(Connections.LocalDataBase, "Regiao");
+            // var destiny = new SqlServerDestiny(Connections.LocalDataBase, "Regiao");
 
-            var pipeLine = new PipeLineContext<Region>()
-                  .SetOrigin(origin)
-                  .SetDestiny(destiny)
-                  .AddMap("Id", "Identidade")
-                  .AddMap("Initials", "Sigla")
-                  .AddMap("Name", "NomeDaRegiao")
-                  .Get()
-                  .Synk();
+            // var pipeLine = new PipeLineContext<Region>()
+            //       .SetOrigin(origin)
+            //       .SetDestiny(destiny)
+            //       .AddMap("Id", "Identidade")
+            //       .AddMap("Initials", "Sigla")
+            //       .AddMap("Name", "NomeDaRegiao")
+            //       .Get()
+            //       .Synk();
 
-            foreach (var notification in pipeLine.Notifications)
-            {
-                Console.WriteLine(notification);
-            }
+            // foreach (var notification in pipeLine.Notifications)
+            // {
+            //     Console.WriteLine(notification);
+            // }
         }
 
         private static Func<XElement, Region> Mapping()
