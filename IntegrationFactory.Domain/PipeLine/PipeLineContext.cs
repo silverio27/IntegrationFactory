@@ -1,3 +1,5 @@
+using System;
+using System.Data;
 using IntegrationFactory.Domain.DataSet.Contracts;
 using IntegrationFactory.Domain.DataSet.Notifications;
 using IntegrationFactory.Domain.Extensions;
@@ -9,6 +11,8 @@ namespace IntegrationFactory.Domain.PipeLine
         public IOrigin<T> Origin { get; private set; }
 
         public IDestiny Destiny { get; private set; }
+
+        public DataTable DataToLoad { get; private set; }
 
         public IPipeLine<T> SetOrigin(IOrigin<T> origin)
         {
@@ -41,16 +45,21 @@ namespace IntegrationFactory.Domain.PipeLine
             Origin.Extract();
             return this;
         }
+        public IPipeLine<T> Transform<D>(Func<T, D> mapping = null)
+        {
+            DataToLoad = Origin.Transform<T, D>(mapping);
+            return this;
+        }
 
         public IPipeLine<T> Load()
         {
             if (!this.Valid)
                 return this;
 
-            var data = Origin.Data.ConvertToDataTable();
-            Destiny.Load(data);
+            Destiny.Load(DataToLoad);
             return this;
         }
+
 
     }
 }

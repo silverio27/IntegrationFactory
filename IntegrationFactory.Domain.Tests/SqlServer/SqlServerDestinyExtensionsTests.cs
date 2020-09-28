@@ -103,7 +103,8 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
             using (destiny.Connection)
             {
                 destiny.Connection.Open();
-                var result = destiny.GetColumns();
+                var keys = destiny.GetColumnKeys();
+                var result = destiny.GetColumns(keys);
                 var columns = new List<string>(){
                     "Identidade",
                     "Sigla",

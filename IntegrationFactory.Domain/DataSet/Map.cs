@@ -10,5 +10,6 @@ namespace IntegrationFactory.Domain.DataSet
 
         public string Source { get; private set; }
         public string Target { get; private set; }
+
     }
 }

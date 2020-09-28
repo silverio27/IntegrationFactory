@@ -182,5 +182,32 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
             Assert.True(destiny.Result.Success);
         }
 
+        [Fact]
+        public void DadoUmDestinoVálidoEUmMapeamentoComPropriedadeVazia()
+        {
+            var destiny = new SqlServerDestiny();
+            destiny.SetConnection(Connections.LocalDataBase);
+            destiny.SetTable(SeedContext.ValidTable);
+            ;
+
+            Assert.Throws<InvalidOperationException>(() => destiny.SetMapping(new List<Map>(){
+                new Map("","Identidade"),
+            }));
+
+        }
+
+        [Fact]
+        public void DadoUmDestinoVálidoEUmMapeamentoComPropriedadeNula()
+        {
+            var destiny = new SqlServerDestiny();
+            destiny.SetConnection(Connections.LocalDataBase);
+            destiny.SetTable(SeedContext.ValidTable);
+
+            Assert.Throws<InvalidOperationException>(() => destiny.SetMapping(new List<Map>(){
+                new Map(null,"Identidade"),
+            }));
+
+        }
+
     }
 }

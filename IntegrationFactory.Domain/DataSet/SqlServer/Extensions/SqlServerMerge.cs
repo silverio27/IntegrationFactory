@@ -36,35 +36,36 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer.Extensions
             for (int i = 0; i < keys.Count; i++)
             {
                 string key = keys[i];
-                sql += $" {(i == 0 ? "ON" : "AND")} Destiny.{key} = Origin.{key} ";
+                sql += $" {(i == 0 ? "ON" : "AND")} Destiny.[{key}] = Origin.[{key}] ";
                 sql += "\n";
             }
 
-            var columns = destiny.GetColumns();
+            var columns = destiny.GetColumns(keys);
 
             sql += $" WHEN MATCHED THEN \n";
             sql += $" UPDATE SET \n";
             for (int i = 0; i < columns.Count; i++)
             {
                 string column = columns[i];
-                sql += $" {column} = Origin.{column}";
+                sql += $" [{column}] = Origin.[{column}]";
                 sql += (i < columns.Count - 1) ? "," : "";
                 sql += "\n";
             }
 
             sql += $" WHEN NOT MATCHED THEN \n";
-            sql += $" INSERT ( { string.Join(", ", columns)} ) \n";
-            sql += $" VALUES ( { string.Join(", ", columns.Select(x => $"Origin.{x}")) } ) \n";
+            sql += $" INSERT ( { string.Join(", ", columns.Select(x => $"[{x}]"))} ) \n";
+            sql += $" VALUES ( { string.Join(", ", columns.Select(x => $"Origin.[{x}]")) } ) \n";
             sql += ";";
 
             return sql;
         }
 
-        public static List<string> GetColumns(this SqlServerDestiny destiny)
+        public static List<string> GetColumns(this SqlServerDestiny destiny, List<string> keys)
         {
             string sql = $@"select COLUMN_NAME 
                             from INFORMATION_SCHEMA.COLUMNS 
-                            where TABLE_NAME like '{destiny.Table}';";
+                            where TABLE_NAME like '{destiny.Table}' 
+                            and COLUMN_NAME not in ({ string.Join(", ", keys.Select(x=> $"'{x}'" )) })";
             return destiny.Connection.Query<string>(sql).ToList();
         }
 

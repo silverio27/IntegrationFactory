@@ -10,7 +10,7 @@ using IntegrationFactory.Domain.PipeLine;
 
 namespace IntegrationFactory.Domain.ConsoleApp.Testes
 {
-    public class CsvToSqlServer
+    public class CsvToSqlServerTransformed
     {
         public static void Execute()
         {
@@ -27,15 +27,22 @@ namespace IntegrationFactory.Domain.ConsoleApp.Testes
                                 }))
                   .SetDestiny(new SqlServerDestiny()
                                 .SetConnection(Connections.LocalDataBase)
-                                .SetTable("Regiao")
+                                .SetTable("RegiaoTestTransformed")
                                 .SetMapping(
                                     new List<Map>(){
                                     new Map("Id", "Identidade"),
                                     new Map("Initials", "Sigla"),
-                                    new Map("Name", "NomeDaRegiao")
+                                    new Map("Name", "NomeDaRegiao"),
+                                    new Map("Concat", "Concat"),
+                                    new Map("When", "When")
                                 }))
                   .Extract()
-                  .Transform<Region>()
+                  .Transform<RegionTransformed>(x => new RegionTransformed(){
+                      Id = x.Id,
+                      Initials = x.Initials,
+                      Name = x.Name,
+                      Concat = $"{x.Initials} - {x.Name}"
+                  })
                   .Load();
 
             pipeLine.WriteNotifications();

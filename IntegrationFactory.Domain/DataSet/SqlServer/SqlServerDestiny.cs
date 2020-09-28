@@ -15,8 +15,6 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
 
         public Result Result { get; private set; }
 
-        public List<Map> Mapping { get; private set; }
-
         SqlBulkCopy _sqlBulkCopy;
 
         public ISqlServerDestiny SetConnection(string connection)
@@ -28,7 +26,6 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
 
         public IDestiny SetMapping(List<Map> mapping)
         {
-            Mapping = mapping;
             if (mapping == null) return this;
             mapping.ForEach((m) =>
                 _sqlBulkCopy.ColumnMappings.Add(
@@ -51,6 +48,7 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer
 
             if (string.IsNullOrEmpty(Table))
                 AddNotification("A tabela de destino não pode ser vazio ou nulo.");
+
         }
 
 

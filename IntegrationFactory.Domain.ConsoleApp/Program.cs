@@ -17,6 +17,7 @@ namespace IntegrationFactory.Domain.ConsoleApp
             Console.ForegroundColor = ConsoleColor.White;
 
             CsvToSqlServer.Execute();
+            CsvToSqlServerTransformed.Execute();
 
             // XmlToSqlServer.Execute();
             // TxtToSqlServer.Execute();

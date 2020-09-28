@@ -16,15 +16,10 @@ SOAP(xml) | SqlServer | 0% | Não
 # Todo
 Implementando dados que integram com SqlServer
 ### 1º Candidato
-* Explicitar as propriedades de Destino e Origem para melhorar a testabilidade e design do código
 * Possibilitar o processamento de valores entre a operação de extração e carga (implementar o Transform)
 > 
 >   * Exemplos:
 >   1. Remover uma coluna de um arquivo de texto plano
->   2. Multiplicar uma coluna de preço e quantidade e criar uma coluna de total
->   3. Implementar uma coluna de data em tempo de execução
-
-* Melhorar design da montagem do PipeLine
 
 ### 2º Candidato
 * Implementar a origem por dados em memória (MemoryStream)
