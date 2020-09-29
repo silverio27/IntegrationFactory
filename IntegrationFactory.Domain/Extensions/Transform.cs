@@ -1,22 +1,18 @@
 using System.Linq;
 using System;
 using System.Data;
-using IntegrationFactory.Domain.DataSet.Contracts;
+using System.Collections.Generic;
 
 namespace IntegrationFactory.Domain.Extensions
 {
-    public class C
-    {
-        public int X { get; set; }
-    }
     public static class TransformExtension
     {
-        public static DataTable Transform<O, D>(this IOrigin<O> origin, Func<O, D> mapping = null)
+        public static DataTable Transform<O, D>(this IEnumerable<O> data, Func<O, D> mapping = null)
         {
             if (mapping == null)
-                return origin.Data.ConvertToDataTable();
-            return origin.Data.Select(mapping).ConvertToDataTable();
-
+                return data.ConvertToDataTable();
+                
+            return data.Select(mapping).ConvertToDataTable();
         }
     }
 }

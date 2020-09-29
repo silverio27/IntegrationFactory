@@ -47,7 +47,7 @@ namespace IntegrationFactory.Domain.PipeLine
         }
         public IPipeLine<T> Transform<D>(Func<T, D> mapping = null)
         {
-            DataToLoad = Origin.Transform<T, D>(mapping);
+            DataToLoad = Origin.Data.Transform<T, D>(mapping);
             return this;
         }
 

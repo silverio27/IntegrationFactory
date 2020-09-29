@@ -40,15 +40,16 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer.Extensions
                 sql += "\n";
             }
 
-            var columns = destiny.GetColumns(keys);
+            var columns = destiny.GetColumns();
+            var columnsWhithoutKeys = columns.Where(x => !keys.Any(y => y == x)).ToList();
 
             sql += $" WHEN MATCHED THEN \n";
             sql += $" UPDATE SET \n";
-            for (int i = 0; i < columns.Count; i++)
+            for (int i = 0; i < columnsWhithoutKeys.Count; i++)
             {
-                string column = columns[i];
+                string column = columnsWhithoutKeys[i];
                 sql += $" [{column}] = Origin.[{column}]";
-                sql += (i < columns.Count - 1) ? "," : "";
+                sql += (i < columnsWhithoutKeys.Count - 1) ? "," : "";
                 sql += "\n";
             }
 
@@ -60,12 +61,11 @@ namespace IntegrationFactory.Domain.DataSet.SqlServer.Extensions
             return sql;
         }
 
-        public static List<string> GetColumns(this SqlServerDestiny destiny, List<string> keys)
+        public static List<string> GetColumns(this SqlServerDestiny destiny)
         {
             string sql = $@"select COLUMN_NAME 
                             from INFORMATION_SCHEMA.COLUMNS 
-                            where TABLE_NAME like '{destiny.Table}' 
-                            and COLUMN_NAME not in ({ string.Join(", ", keys.Select(x=> $"'{x}'" )) })";
+                            where TABLE_NAME like '{destiny.Table}' ;";
             return destiny.Connection.Query<string>(sql).ToList();
         }
 
