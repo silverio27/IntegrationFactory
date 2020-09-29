@@ -12,7 +12,17 @@ namespace IntegrationFactory.Domain.Tests.Extensions
         {
             var list = ValidList();
 
-            var data = list.ConvertToDataTable();
+            var data = list.Transform<Region, Region>(null);
+
+            Assert.Equal(2, data.Rows.Count);
+        }
+
+        [Fact]
+        public void DadoUmaListaVálidaExecutaoTransform()
+        {
+            var list = ValidList();
+
+            var data = list.Transform(x => new { x.Initials });
 
             Assert.Equal(2, data.Rows.Count);
         }

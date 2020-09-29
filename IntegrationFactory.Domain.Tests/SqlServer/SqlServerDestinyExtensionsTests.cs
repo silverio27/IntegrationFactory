@@ -78,7 +78,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
                 var key = destiny.GetColumnKeys();
                 var command = destiny.GetMergeCommand(key);
 
-                Assert.Equal(" Merge RegiaoTest as Destiny \n USING #RegiaoTest as Origin \n ON Destiny.Identidade = Origin.Identidade \n WHEN MATCHED THEN \n UPDATE SET \n Identidade = Origin.Identidade,\n Sigla = Origin.Sigla,\n NomeDaRegiao = Origin.NomeDaRegiao\n WHEN NOT MATCHED THEN \n INSERT ( Identidade, Sigla, NomeDaRegiao ) \n VALUES ( Origin.Identidade, Origin.Sigla, Origin.NomeDaRegiao ) \n;",
+                Assert.Equal(" Merge RegiaoTest as Destiny \n USING #RegiaoTest as Origin \n ON Destiny.[Identidade] = Origin.[Identidade] \n WHEN MATCHED THEN \n UPDATE SET \n [Sigla] = Origin.[Sigla],\n [NomeDaRegiao] = Origin.[NomeDaRegiao]\n WHEN NOT MATCHED THEN \n INSERT ( [Identidade], [Sigla], [NomeDaRegiao] ) \n VALUES ( Origin.[Identidade], Origin.[Sigla], Origin.[NomeDaRegiao] ) \n;",
                     command);
             }
         }
@@ -92,7 +92,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
                 var key = destinyComChavePrimariaComposta.GetColumnKeys();
                 var command = destinyComChavePrimariaComposta.GetMergeCommand(key);
 
-                Assert.Equal(" Merge RegiaoComDuasChaves as Destiny \n USING #RegiaoComDuasChaves as Origin \n ON Destiny.Identidade = Origin.Identidade \n AND Destiny.Sigla = Origin.Sigla \n WHEN MATCHED THEN \n UPDATE SET \n Identidade = Origin.Identidade,\n Sigla = Origin.Sigla,\n NomeDaRegiao = Origin.NomeDaRegiao\n WHEN NOT MATCHED THEN \n INSERT ( Identidade, Sigla, NomeDaRegiao ) \n VALUES ( Origin.Identidade, Origin.Sigla, Origin.NomeDaRegiao ) \n;",
+                Assert.Equal(" Merge RegiaoComDuasChaves as Destiny \n USING #RegiaoComDuasChaves as Origin \n ON Destiny.[Identidade] = Origin.[Identidade] \n AND Destiny.[Sigla] = Origin.[Sigla] \n WHEN MATCHED THEN \n UPDATE SET \n [NomeDaRegiao] = Origin.[NomeDaRegiao]\n WHEN NOT MATCHED THEN \n INSERT ( [Identidade], [Sigla], [NomeDaRegiao] ) \n VALUES ( Origin.[Identidade], Origin.[Sigla], Origin.[NomeDaRegiao] ) \n;",
                     command);
             }
         }
@@ -104,7 +104,7 @@ namespace IntegrationFactory.Domain.Tests.SqlServer
             {
                 destiny.Connection.Open();
                 var keys = destiny.GetColumnKeys();
-                var result = destiny.GetColumns(keys);
+                var result = destiny.GetColumns();
                 var columns = new List<string>(){
                     "Identidade",
                     "Sigla",
