@@ -1,5 +1,8 @@
+using System.Linq.Expressions;
+using System.Reflection;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using IntegrationFactory.Domain.DataSet.Contracts;
@@ -37,11 +40,38 @@ namespace IntegrationFactory.Domain.DataSet.Xml
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Path))
+                AddNotification("O caminho não pode ser vazio ou nulo.");
+
+            var fileExist = File.Exists(Path);
+
+            bool fileEmpty = false;
+
+            if (!fileExist)
+                AddNotification("O arquivo não existe no local indicado.");
+
+            if (fileExist)
+            {
+                fileEmpty = new FileInfo(Path).Length == 0;
+                if (fileEmpty)
+                    AddNotification("O Arquivo não pode estar vazio.");
+            }
+
+
+            if (Mapping == null)
+                AddNotification("O mapeamento não pode ser nulo.");
+
+            if (string.IsNullOrEmpty(Descendants))
+                AddNotification("Descendentes não pode ser nulo ou vazio.");
+
+            if (!string.IsNullOrEmpty(Descendants) && !fileEmpty)
+                if (!XElement.Load(Path).Descendants(Descendants).Any())
+                    AddNotification("O descendente não existe no arquivo.");
         }
 
         public IOrigin<T> Extract()
         {
+
             Data = XElement.Load(Path).Descendants(Descendants)
                .Select(Mapping);
             return this;
