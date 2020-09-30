@@ -3,23 +3,20 @@
 
 ## Progresso
 
-Origem | Destino | Testes | Estável
------- | ------- | ----- | -------
-SqlSever* | SqlServer | 0% | Não
-CSV* | SqlServer | 0% | Não
-TXT* | SqlServer | 0% | Não
-XML* | SqlServer | 0% | Não
-JSON | SqlServer | 0% | Não
-REST(Json) | SqlServer | 0% | Não
-SOAP(xml) | SqlServer | 0% | Não
+Origem | Destino | Testes 
+------ | ------- | ----- 
+SqlSever* | SqlServer | Não 
+Texto plano (CSV e TXT) | SqlServer | Sim 
+XML* | SqlServer | Não 
+JSON | SqlServer | Não 
+REST(Json) | SqlServer | Não 
+SOAP(xml) | SqlServer | Não 
 
 # Todo
 Implementando dados que integram com SqlServer
 ### 1º Candidato
-* Possibilitar o processamento de valores entre a operação de extração e carga (implementar o Transform)
-> 
->   * Exemplos:
->   1. Remover uma coluna de um arquivo de texto plano
+* Criar teste para origem em XML
+* Criar teste para origem em SqlServer
 
 ### 2º Candidato
 * Implementar a origem por dados em memória (MemoryStream)
@@ -34,10 +31,10 @@ Soap
 > Necessário explicitar a escolha do tipo de retorno
 
 ### 4º Candidato
-* Eliminar o Dapper das consultas
 * O Código tem que ser configurável através de um arquivo json
 * Adicionar observadores para o cliente acompanhar o trabalho
 * Documentar a implementação da pipeline com exemplos
+* Eliminar o Dapper das consultas
 * Transformar a aplicação em uma CLI
 
 

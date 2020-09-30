@@ -42,5 +42,39 @@ namespace IntegrationFactory.Domain.Tests
             Assert.Equal("3 itens incluídos", pipeLine.Destiny.Result.Message);
 
         }
+
+        [Fact]
+        public void CsvToSqlServerComUmaColunaAMenosExecute()
+        {
+
+            var pipeLine = new PipeLineContext<Region>()
+                  .SetOrigin(new PlainTextOrigin<Region>()
+                                .SetPath(CSV.Path)
+                                .SetSeparator(';')
+                                .SetMapping(x => new Region()
+                                {
+                                    Id = Convert.ToInt32(x[0]),
+                                    Initials = x[1],
+                                    Name = x[2]
+                                }))
+                  .SetDestiny(new SqlServerDestiny()
+                                .SetConnection(Connections.LocalDataBase)
+                                .SetTable("RegiaoTestMinus")
+                                .SetMapping(
+                                    new List<Map>(){
+                                    new Map("Id", "Identidade"),
+                                    new Map("Initials", "Sigla"),
+                                }))
+                  .Extract()
+                  .Transform(x => new
+                  {
+                      x.Id,
+                      x.Initials
+                  })
+                  .Load();
+
+            Assert.Equal("3 itens incluídos", pipeLine.Destiny.Result.Message);
+
+        }
     }
 }

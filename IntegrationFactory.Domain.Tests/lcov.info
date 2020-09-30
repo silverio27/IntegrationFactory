@@ -1,27 +1,27 @@
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\PipeLine\PipeLineContext.cs
 FN:10,IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Origin()
-FNDA:4,IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Origin()
-DA:11,4
+FNDA:8,IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Origin()
+DA:11,8
 FN:12,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Destiny()
-FNDA:4,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Destiny()
-DA:13,4
+FNDA:8,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_Destiny()
+DA:13,8
 FN:14,System.Data.DataTable IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_DataToLoad()
-FNDA:2,System.Data.DataTable IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_DataToLoad()
-DA:15,2
+FNDA:4,System.Data.DataTable IntegrationFactory.Domain.PipeLine.PipeLineContext`1::get_DataToLoad()
+DA:15,4
 FN:17,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetOrigin(IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T>)
-FNDA:1,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetOrigin(IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T>)
-DA:18,1
-DA:19,1
-DA:20,1
-DA:21,1
-DA:22,1
+FNDA:2,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetOrigin(IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T>)
+DA:18,2
+DA:19,2
+DA:20,2
+DA:21,2
+DA:22,2
 FN:24,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetDestiny(IntegrationFactory.Domain.DataSet.Contracts.IDestiny)
-FNDA:1,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetDestiny(IntegrationFactory.Domain.DataSet.Contracts.IDestiny)
-DA:25,1
-DA:26,1
-DA:27,1
-DA:28,1
-DA:29,1
+FNDA:2,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::SetDestiny(IntegrationFactory.Domain.DataSet.Contracts.IDestiny)
+DA:25,2
+DA:26,2
+DA:27,2
+DA:28,2
+DA:29,2
 FN:31,System.Void IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Validate()
 FNDA:0,System.Void IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Validate()
 DA:32,0
@@ -35,31 +35,31 @@ BRDA:33,17,1,0
 BRDA:36,58,0,0
 BRDA:36,58,1,0
 FN:40,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Extract()
-FNDA:1,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Extract()
-DA:41,1
-DA:42,1
+FNDA:2,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Extract()
+DA:41,2
+DA:42,2
 DA:43,0
-DA:45,1
-DA:46,1
-DA:47,1
+DA:45,2
+DA:46,2
+DA:47,2
 BRDA:42,12,0,0
-BRDA:42,12,1,1
+BRDA:42,12,1,2
 FN:48,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Transform(System.Func`2<T,D>)
-FNDA:1,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Transform(System.Func`2<T,D>)
-DA:49,1
-DA:50,1
-DA:51,1
-DA:52,1
+FNDA:2,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Transform(System.Func`2<T,D>)
+DA:49,2
+DA:50,2
+DA:51,2
+DA:52,2
 FN:54,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Load()
-FNDA:1,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Load()
-DA:55,1
-DA:56,1
+FNDA:2,IntegrationFactory.Domain.PipeLine.IPipeLine`1<T> IntegrationFactory.Domain.PipeLine.PipeLineContext`1::Load()
+DA:55,2
+DA:56,2
 DA:57,0
-DA:59,1
-DA:60,1
-DA:61,1
+DA:59,2
+DA:60,2
+DA:61,2
 BRDA:56,12,0,0
-BRDA:56,12,1,1
+BRDA:56,12,1,2
 LF:35
 LH:27
 BRF:8
@@ -69,33 +69,33 @@ FNH:8
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\Extensions\DataTableExtensions.cs
 FN:10,System.Data.DataTable IntegrationFactory.Domain.Extensions.DataTableExtensions::ConvertToDataTable(System.Collections.Generic.IEnumerable`1<T>)
-FNDA:3,System.Data.DataTable IntegrationFactory.Domain.Extensions.DataTableExtensions::ConvertToDataTable(System.Collections.Generic.IEnumerable`1<T>)
-DA:11,3
-DA:12,3
-DA:13,3
-DA:15,23
-DA:16,7
-DA:17,7
-DA:18,7
-DA:20,23
-DA:21,7
-DA:22,7
-DA:23,55
-DA:24,17
-DA:26,7
-DA:27,7
-DA:29,3
-DA:30,3
-BRDA:15,90,1,7
-BRDA:16,69,0,7
-BRDA:16,69,1,7
-BRDA:15,90,0,3
-BRDA:20,265,1,7
-BRDA:23,217,1,17
+FNDA:4,System.Data.DataTable IntegrationFactory.Domain.Extensions.DataTableExtensions::ConvertToDataTable(System.Collections.Generic.IEnumerable`1<T>)
+DA:11,4
+DA:12,4
+DA:13,4
+DA:15,30
+DA:16,9
+DA:17,9
+DA:18,9
+DA:20,32
+DA:21,10
+DA:22,10
+DA:23,76
+DA:24,23
+DA:26,10
+DA:27,10
+DA:29,4
+DA:30,4
+BRDA:15,90,1,9
+BRDA:16,69,0,9
+BRDA:16,69,1,9
+BRDA:15,90,0,4
+BRDA:20,265,1,10
+BRDA:23,217,1,23
 BRDA:24,196,0,0
-BRDA:24,196,1,17
-BRDA:23,217,0,7
-BRDA:20,265,0,3
+BRDA:24,196,1,23
+BRDA:23,217,0,10
+BRDA:20,265,0,4
 LF:16
 LH:16
 BRF:10
@@ -105,14 +105,14 @@ FNH:1
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\Extensions\Transform.cs
 FN:10,System.Data.DataTable IntegrationFactory.Domain.Extensions.TransformExtension::Transform(System.Collections.Generic.IEnumerable`1<O>,System.Func`2<O,D>)
-FNDA:3,System.Data.DataTable IntegrationFactory.Domain.Extensions.TransformExtension::Transform(System.Collections.Generic.IEnumerable`1<O>,System.Func`2<O,D>)
-DA:11,3
-DA:12,3
+FNDA:4,System.Data.DataTable IntegrationFactory.Domain.Extensions.TransformExtension::Transform(System.Collections.Generic.IEnumerable`1<O>,System.Func`2<O,D>)
+DA:11,4
+DA:12,4
 DA:13,2
-DA:15,1
-DA:16,3
+DA:15,2
+DA:16,4
 BRDA:12,7,0,2
-BRDA:12,7,1,1
+BRDA:12,7,1,2
 LF:5
 LH:5
 BRF:2
@@ -122,18 +122,18 @@ FNH:1
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\Map.cs
 FN:10,System.String IntegrationFactory.Domain.DataSet.Map::get_Source()
-FNDA:24,System.String IntegrationFactory.Domain.DataSet.Map::get_Source()
-DA:11,24
+FNDA:28,System.String IntegrationFactory.Domain.DataSet.Map::get_Source()
+DA:11,28
 FN:11,System.String IntegrationFactory.Domain.DataSet.Map::get_Target()
-FNDA:24,System.String IntegrationFactory.Domain.DataSet.Map::get_Target()
-DA:12,24
+FNDA:28,System.String IntegrationFactory.Domain.DataSet.Map::get_Target()
+DA:12,28
 FN:4,System.Void IntegrationFactory.Domain.DataSet.Map::.ctor(System.String,System.String)
-FNDA:12,System.Void IntegrationFactory.Domain.DataSet.Map::.ctor(System.String,System.String)
-DA:5,12
-DA:6,12
-DA:7,12
-DA:8,12
-DA:9,12
+FNDA:14,System.Void IntegrationFactory.Domain.DataSet.Map::.ctor(System.String,System.String)
+DA:5,14
+DA:6,14
+DA:7,14
+DA:8,14
+DA:9,14
 LF:7
 LH:7
 BRF:0
@@ -143,18 +143,18 @@ FNH:3
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\Result.cs
 FN:10,System.Boolean IntegrationFactory.Domain.DataSet.Result::get_Success()
-FNDA:12,System.Boolean IntegrationFactory.Domain.DataSet.Result::get_Success()
-DA:11,12
+FNDA:13,System.Boolean IntegrationFactory.Domain.DataSet.Result::get_Success()
+DA:11,13
 FN:11,System.String IntegrationFactory.Domain.DataSet.Result::get_Message()
-FNDA:9,System.String IntegrationFactory.Domain.DataSet.Result::get_Message()
-DA:12,9
+FNDA:11,System.String IntegrationFactory.Domain.DataSet.Result::get_Message()
+DA:12,11
 FN:4,System.Void IntegrationFactory.Domain.DataSet.Result::.ctor(System.Boolean,System.String)
-FNDA:7,System.Void IntegrationFactory.Domain.DataSet.Result::.ctor(System.Boolean,System.String)
-DA:5,7
-DA:6,7
-DA:7,7
-DA:8,7
-DA:9,7
+FNDA:8,System.Void IntegrationFactory.Domain.DataSet.Result::.ctor(System.Boolean,System.String)
+DA:5,8
+DA:6,8
+DA:7,8
+DA:8,8
+DA:9,8
 LF:7
 LH:7
 BRF:0
@@ -213,75 +213,75 @@ FNH:0
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\SqlServer\SqlServerDestiny.cs
 FN:11,System.Data.SqlClient.SqlConnection IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Connection()
-FNDA:125,System.Data.SqlClient.SqlConnection IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Connection()
-DA:12,125
+FNDA:133,System.Data.SqlClient.SqlConnection IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Connection()
+DA:12,133
 FN:13,System.String IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Table()
-FNDA:102,System.String IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Table()
-DA:14,102
+FNDA:111,System.String IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Table()
+DA:14,111
 FN:15,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Result()
-FNDA:14,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Result()
-DA:16,14
+FNDA:16,IntegrationFactory.Domain.DataSet.Result IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::get_Result()
+DA:16,16
 FN:20,IntegrationFactory.Domain.DataSet.SqlServer.ISqlServerDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetConnection(System.String)
-FNDA:29,IntegrationFactory.Domain.DataSet.SqlServer.ISqlServerDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetConnection(System.String)
-DA:21,29
-DA:22,29
-DA:23,28
-DA:24,28
-DA:25,28
+FNDA:30,IntegrationFactory.Domain.DataSet.SqlServer.ISqlServerDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetConnection(System.String)
+DA:21,30
+DA:22,30
+DA:23,29
+DA:24,29
+DA:25,29
 FN:27,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetMapping(System.Collections.Generic.List`1<IntegrationFactory.Domain.DataSet.Map>)
-FNDA:7,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetMapping(System.Collections.Generic.List`1<IntegrationFactory.Domain.DataSet.Map>)
-DA:28,7
-DA:29,8
-DA:30,6
-DA:31,18
-DA:32,18
-DA:33,4
-DA:34,5
+FNDA:8,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetMapping(System.Collections.Generic.List`1<IntegrationFactory.Domain.DataSet.Map>)
+DA:28,8
+DA:29,9
+DA:30,7
+DA:31,21
+DA:32,21
+DA:33,5
+DA:34,6
 BRDA:29,7,0,1
-BRDA:29,7,1,6
+BRDA:29,7,1,7
 FN:36,IntegrationFactory.Domain.DataSet.SqlServer.ISqlServerDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetTable(System.String)
-FNDA:28,IntegrationFactory.Domain.DataSet.SqlServer.ISqlServerDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetTable(System.String)
-DA:37,28
-DA:38,28
-DA:39,28
-DA:40,28
+FNDA:29,IntegrationFactory.Domain.DataSet.SqlServer.ISqlServerDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::SetTable(System.String)
+DA:37,29
+DA:38,29
+DA:39,29
+DA:40,29
 FN:42,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Validate()
-FNDA:14,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Validate()
-DA:43,14
-DA:44,14
-DA:46,14
+FNDA:15,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Validate()
+DA:43,15
+DA:44,15
+DA:46,15
 DA:47,2
-DA:49,14
+DA:49,15
 DA:50,2
-DA:52,14
+DA:52,15
 BRDA:46,21,0,2
-BRDA:46,21,1,14
+BRDA:46,21,1,15
 BRDA:49,48,0,2
-BRDA:49,48,1,14
+BRDA:49,48,1,15
 FN:55,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Load(System.Data.DataTable)
-FNDA:9,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Load(System.Data.DataTable)
-DA:56,9
-DA:57,9
+FNDA:10,IntegrationFactory.Domain.DataSet.Contracts.IDestiny IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Load(System.Data.DataTable)
+DA:56,10
+DA:57,10
 DA:58,1
 DA:59,1
 DA:60,1
-DA:63,8
-DA:64,7
-DA:65,7
-DA:66,6
-DA:67,6
-DA:68,6
-DA:69,7
+DA:63,9
+DA:64,8
+DA:65,8
+DA:66,7
+DA:67,7
+DA:68,7
+DA:69,8
 BRDA:57,7,0,1
-BRDA:57,7,1,8
+BRDA:57,7,1,9
 FN:71,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Bulk(System.Data.DataTable)
-FNDA:7,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Bulk(System.Data.DataTable)
-DA:72,7
-DA:73,7
-DA:74,7
-DA:75,7
-DA:76,7
-DA:77,6
+FNDA:8,System.Void IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny::Bulk(System.Data.DataTable)
+DA:72,8
+DA:73,8
+DA:74,8
+DA:75,8
+DA:76,8
+DA:77,7
 LF:44
 LH:44
 BRF:8
@@ -330,72 +330,72 @@ FNH:0
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\SqlServer\Extensions\SqlServerMerge.cs
 FN:9,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::CreateTemporaryTable(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:8,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::CreateTemporaryTable(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:10,8
-DA:11,8
-DA:12,8
-DA:13,8
-DA:14,8
-DA:15,8
+FNDA:9,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::CreateTemporaryTable(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:10,9
+DA:11,9
+DA:12,9
+DA:13,9
+DA:14,9
+DA:15,9
 FN:17,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::Merge(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:6,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::Merge(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:18,6
-DA:19,6
-DA:20,6
-DA:21,6
-DA:22,6
+FNDA:7,System.Void IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::Merge(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:18,7
+DA:19,7
+DA:20,7
+DA:21,7
+DA:22,7
 FN:24,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKeys(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:11,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKeys(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:25,11
-DA:26,11
-DA:27,11
-DA:28,11
-DA:29,11
-DA:30,11
+FNDA:12,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumnKeys(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:25,12
+DA:26,12
+DA:27,12
+DA:28,12
+DA:29,12
+DA:30,12
 FN:32,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.Collections.Generic.List`1<System.String>)
-FNDA:8,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.Collections.Generic.List`1<System.String>)
-DA:33,8
-DA:34,8
-DA:35,8
-DA:36,36
-DA:37,10
-DA:38,10
-DA:39,10
-DA:40,10
-DA:41,10
-DA:43,8
-DA:44,60
-DA:46,8
-DA:47,8
-DA:48,44
-DA:49,14
-DA:50,14
-DA:51,14
-DA:52,14
-DA:53,14
-DA:54,14
-DA:56,8
-DA:57,32
-DA:58,32
-DA:59,8
-DA:61,8
-DA:62,8
-BRDA:36,195,1,10
+FNDA:9,System.String IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetMergeCommand(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny,System.Collections.Generic.List`1<System.String>)
+DA:33,9
+DA:34,9
+DA:35,9
+DA:36,40
+DA:37,11
+DA:38,11
+DA:39,11
+DA:40,11
+DA:41,11
+DA:43,9
+DA:44,65
+DA:46,9
+DA:47,9
+DA:48,48
+DA:49,15
+DA:50,15
+DA:51,15
+DA:52,15
+DA:53,15
+DA:54,15
+DA:56,9
+DA:57,35
+DA:58,35
+DA:59,9
+DA:61,9
+DA:62,9
+BRDA:36,195,1,11
 BRDA:39,102,0,2
-BRDA:39,102,1,8
-BRDA:36,195,0,8
-BRDA:48,385,1,14
-BRDA:52,332,0,8
+BRDA:39,102,1,9
+BRDA:36,195,0,9
+BRDA:48,385,1,15
+BRDA:52,332,0,9
 BRDA:52,332,1,6
-BRDA:48,385,0,8
+BRDA:48,385,0,9
 FN:64,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-FNDA:9,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
-DA:65,9
-DA:66,9
-DA:67,9
-DA:68,9
-DA:69,9
-DA:70,9
+FNDA:10,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.SqlServer.Extensions.SqlServerMerge::GetColumns(IntegrationFactory.Domain.DataSet.SqlServer.SqlServerDestiny)
+DA:65,10
+DA:66,10
+DA:67,10
+DA:68,10
+DA:69,10
+DA:70,10
 LF:49
 LH:49
 BRF:8
@@ -405,72 +405,72 @@ FNH:5
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\PlainText\PlainTextOrigin.cs
 FN:11,System.String IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Path()
-FNDA:45,System.String IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Path()
-DA:12,45
+FNDA:50,System.String IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Path()
+DA:12,50
 FN:13,System.Func`2<System.String[],T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Mapping()
-FNDA:26,System.Func`2<System.String[],T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Mapping()
-DA:14,26
+FNDA:29,System.Func`2<System.String[],T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Mapping()
+DA:14,29
 FN:15,System.Char IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Separator()
-FNDA:26,System.Char IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Separator()
-DA:16,26
+FNDA:31,System.Char IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Separator()
+DA:16,31
 FN:17,System.Collections.Generic.IEnumerable`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Data()
-FNDA:4,System.Collections.Generic.IEnumerable`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Data()
-DA:18,4
+FNDA:6,System.Collections.Generic.IEnumerable`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::get_Data()
+DA:18,6
 FN:20,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetPath(System.String)
-FNDA:11,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetPath(System.String)
-DA:21,11
-DA:22,11
-DA:23,11
-DA:24,11
+FNDA:12,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetPath(System.String)
+DA:21,12
+DA:22,12
+DA:23,12
+DA:24,12
 FN:26,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetMapping(System.Func`2<System.String[],T>)
-FNDA:11,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetMapping(System.Func`2<System.String[],T>)
-DA:27,11
-DA:28,11
-DA:29,11
-DA:30,11
+FNDA:12,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetMapping(System.Func`2<System.String[],T>)
+DA:27,12
+DA:28,12
+DA:29,12
+DA:30,12
 FN:32,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetSeparator(System.Char)
-FNDA:7,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetSeparator(System.Char)
-DA:33,7
-DA:34,7
-DA:35,7
-DA:36,7
+FNDA:8,IntegrationFactory.Domain.DataSet.PlainText.IPlainTextOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::SetSeparator(System.Char)
+DA:33,8
+DA:34,8
+DA:35,8
+DA:36,8
 FN:38,System.Void IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::Validate()
-FNDA:11,System.Void IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::Validate()
-DA:39,11
-DA:40,11
+FNDA:12,System.Void IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::Validate()
+DA:39,12
+DA:40,12
 DA:41,2
-DA:43,11
-DA:45,11
+DA:43,12
+DA:45,12
 DA:46,3
-DA:48,11
-DA:49,8
+DA:48,12
+DA:49,9
 DA:50,1
-DA:52,11
+DA:52,12
 DA:53,4
-DA:55,11
+DA:55,12
 DA:56,1
-DA:57,11
+DA:57,12
 BRDA:40,14,0,2
-BRDA:40,14,1,11
+BRDA:40,14,1,12
 BRDA:45,46,0,3
-BRDA:45,46,1,11
-BRDA:48,63,0,8
+BRDA:45,46,1,12
+BRDA:48,63,0,9
 BRDA:49,89,0,1
-BRDA:48,63,1,11
-BRDA:49,89,1,11
+BRDA:48,63,1,12
+BRDA:49,89,1,12
 BRDA:52,116,0,4
-BRDA:52,116,1,11
+BRDA:52,116,1,12
 BRDA:55,143,0,1
-BRDA:55,143,1,11
+BRDA:55,143,1,12
 FN:59,IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::Extract()
-FNDA:4,IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::Extract()
-DA:60,4
-DA:61,4
-DA:62,12
-DA:63,4
-DA:64,4
-DA:65,2
-DA:66,2
+FNDA:5,IntegrationFactory.Domain.DataSet.Contracts.IOrigin`1<T> IntegrationFactory.Domain.DataSet.PlainText.PlainTextOrigin`1::Extract()
+DA:60,5
+DA:61,5
+DA:62,16
+DA:63,5
+DA:64,5
+DA:65,3
+DA:66,3
 LF:37
 LH:37
 BRF:12
@@ -480,22 +480,22 @@ FNH:9
 end_of_record
 SF:C:\Work\IntegrationFactory\IntegrationFactory.Domain\DataSet\Notifications\Validatable.cs
 FN:9,System.Boolean IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Valid()
-FNDA:4,System.Boolean IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Valid()
-DA:10,4
-DA:11,4
-DA:12,4
+FNDA:6,System.Boolean IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Valid()
+DA:10,6
+DA:11,6
+DA:12,6
 FN:13,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Notifications()
-FNDA:70,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Notifications()
-DA:14,70
+FNDA:75,System.Collections.Generic.List`1<System.String> IntegrationFactory.Domain.DataSet.Notifications.Validatable::get_Notifications()
+DA:14,75
 FN:14,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::AddNotification(System.String)
 FNDA:15,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::AddNotification(System.String)
 DA:15,15
 FN:17,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::.ctor()
-FNDA:41,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::.ctor()
-DA:18,41
-DA:19,41
-DA:20,41
-DA:21,41
+FNDA:44,System.Void IntegrationFactory.Domain.DataSet.Notifications.Validatable::.ctor()
+DA:18,44
+DA:19,44
+DA:20,44
+DA:21,44
 LF:9
 LH:9
 BRF:0
