@@ -1,20 +1,20 @@
 using System.Linq;
-using System;
-using IntegrationFactory.Domain.DataSet.PlainText;
+using IntegrationFactory.Domain.DataSet.Xml;
 using IntegrationFactory.Domain.Tests.SeedWork;
 using Xunit;
 
-namespace IntegrationFactory.Domain.Tests.Csv
+namespace IntegrationFactory.Domain.Tests.Xml
 {
-    public class CsvOriginTests
+    public class XmlOriginTests
     {
+
         [Fact]
         public void DadaUmaOrigemVálida()
         {
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.Path);
-            origin.SetMapping(CSV.Mapping);
-            origin.SetSeparator(';');
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.Path);
+            origin.SetMapping(XML.Mapping);
+            origin.SetDescendants("Regiao");
             origin.Validate();
 
             Assert.True(origin.Valid);
@@ -23,9 +23,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoVazio()
         {
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
             origin.SetPath("");
-            origin.SetMapping(CSV.Mapping);
+            origin.SetMapping(XML.Mapping);
             origin.Validate();
 
             Assert.Equal("O caminho não pode ser vazio ou nulo.",
@@ -35,9 +35,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoNulo()
         {
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
             origin.SetPath(null);
-            origin.SetMapping(CSV.Mapping);
+            origin.SetMapping(XML.Mapping);
             origin.Validate();
 
             Assert.Equal("O caminho não pode ser vazio ou nulo.",
@@ -47,9 +47,9 @@ namespace IntegrationFactory.Domain.Tests.Csv
         [Fact]
         public void DadaUmaOrigemComCaminhoInválido()
         {
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
             origin.SetPath("RRRRRR");
-            origin.SetMapping(CSV.Mapping);
+            origin.SetMapping(XML.Mapping);
             origin.Validate();
 
             Assert.Equal("O arquivo não existe no local indicado.",
@@ -60,22 +60,22 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComSeparadorNulo()
         {
 
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.Path);
-            origin.SetMapping(CSV.Mapping);
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.Path);
+            origin.SetMapping(XML.Mapping);
             origin.Validate();
 
-            Assert.Equal("O separador não é válido.",
+            Assert.Equal("Descendentes não pode ser nulo ou vazio.",
                 origin.Notifications.First());
         }
 
         [Fact]
         public void DadaUmaOrigemComUmMappingNulo()
         {
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.Path);
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.Path);
             origin.SetMapping(null);
-            origin.SetSeparator(';');
+            origin.SetDescendants("Regiao");
             origin.Validate();
 
             Assert.Equal("O mapeamento não pode ser nulo.",
@@ -86,10 +86,10 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemInválidaComArquivoVazio()
         {
 
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.EmptyPath);
-            origin.SetMapping(CSV.Mapping);
-            origin.SetSeparator(';');
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.EmptyPath);
+            origin.SetMapping(XML.Mapping);
+            origin.SetDescendants("Regiao");
             origin.Validate();
 
             Assert.Equal("O Arquivo não pode estar vazio.",
@@ -100,10 +100,10 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemVálidaRetornaUmaLista()
         {
 
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.Path);
-            origin.SetMapping(CSV.Mapping);
-            origin.SetSeparator(';');
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.Path);
+            origin.SetMapping(XML.Mapping);
+            origin.SetDescendants("Regiao");
             origin.Validate();
 
             var result = origin.Extract();
@@ -116,26 +116,27 @@ namespace IntegrationFactory.Domain.Tests.Csv
         public void DadaUmaOrigemComSeparatorInválidoRetornaUmaExcessaoDeFormato()
         {
 
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.Path);
-            origin.SetMapping(CSV.Mapping);
-            origin.SetSeparator('|');
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.Path);
+            origin.SetMapping(XML.Mapping);
+            origin.SetDescendants("RR");
             origin.Validate();
 
-            Assert.Throws<System.FormatException>(() => origin.Extract());
+            Assert.False(origin.Valid);
         }
 
         [Fact]
         public void DadaUmaOrigemComMappginInválidoRetornaUmaExcessaoDeFormato()
         {
 
-            IPlainTextOrigin<Region> origin = new PlainTextOrigin<Region>();
-            origin.SetPath(CSV.Path);
-            origin.SetMapping(CSV.MappingInválido);
-            origin.SetSeparator(';');
+            IXmlOrigin<Region> origin = new XmlOrigin<Region>();
+            origin.SetPath(XML.Path);
+            origin.SetMapping(XML.MappingInválido);
+            origin.SetDescendants("Regiao");
             origin.Validate();
 
             Assert.Throws<System.IndexOutOfRangeException>(() => origin.Extract());
         }
+
     }
 }

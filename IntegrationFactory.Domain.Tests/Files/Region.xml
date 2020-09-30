@@ -1,0 +1,17 @@
+<Resposta>
+    <Regiao>
+        <Id>9</Id>
+        <Initials>CN</Initials>
+        <Name>Canadá</Name>
+    </Regiao>
+    <Regiao>
+        <Id>10</Id>
+        <Initials>RS</Initials>
+        <Name>Rússia</Name>
+    </Regiao>
+    <Regiao>
+        <Id>11</Id>
+        <Initials>BR</Initials>
+        <Name>Brasil</Name>
+    </Regiao>
+</Resposta>
